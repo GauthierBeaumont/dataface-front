@@ -5,12 +5,14 @@ import { Router, Route, IndexRoute } from 'react-router'
 import Wrapper from './components/Wrapper'
 import Dashboard from './components/Dashboard'
 import Home from './components/Home'
+import Test from './containers/test'
 
 const App = ({ history }) => (
   <Router history={history}>
     <Route path='/'>
       <Route component={Wrapper}>
         <IndexRoute component={Home}/>
+        <Route path='test' component={Test}/>
         <Route path='dashboard' component={Dashboard}/>
       </Route>
     </Route>

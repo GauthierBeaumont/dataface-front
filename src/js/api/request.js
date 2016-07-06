@@ -4,4 +4,6 @@ import superagentPromisePlugin from 'superagent-promise-plugin'
 
 promise.polyfill()
 
-export const request = superagentPromisePlugin.patch(superagent)
+const request = superagentPromisePlugin.patch(superagent)
+
+export default request
