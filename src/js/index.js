@@ -13,13 +13,12 @@ import { useRouterHistory } from 'react-router'
 //Components
 import App from './app'
 
-const appHistory = useRouterHistory(createHashHistory)()
+const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
 const store = configureStore(appHistory)
-const history = syncHistoryWithStore(appHistory, store)
 
 render(
   <Provider store={store}>
-    <App/>
+    <App history={appHistory}/>
   </Provider>,
   document.getElementById('root')
 )
