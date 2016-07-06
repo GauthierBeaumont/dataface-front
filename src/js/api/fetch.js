@@ -1,10 +1,10 @@
 import { rootURL } from './config'
-import request from './request'
+import {request} from './request'
 import trim from 'lodash/trim'
 
 export const fetchUrl = url => (
-  request.get(`${rootURL}/`+trim(url, '/'))
-    .then(res => res.body)
+  request.get(`http://localhost:8000/${url}`)
+    .then(res => console.log(res.body))
 )
 
 export const postURL = url => (
