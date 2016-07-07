@@ -109,6 +109,9 @@
   font-size: 16px;
   text-decoration: underline;
 }
+.Produit .image-header {
+  background-image: url('/dist/images/product/image-header-product.jpg');
+}
 html,
 body,
 .Wrapper {
