@@ -3,6 +3,40 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+.HeaderWrapper {
+  width: 100%;
+}
+.HeaderWrapper .header {
+  padding: 10 45px;
+}
+.HeaderWrapper .header .Logo,
+.HeaderWrapper .header .Nav {
+  display: inline-block;
+  vertical-align: middle;
+}
+.HeaderWrapper .header .Logo {
+  height: 52px;
+}
+.HeaderWrapper .header .Nav {
+  width: calc(100% - 313px);
+  text-align: right;
+}
+.HeaderWrapper .header .Nav .btn {
+  text-transform: initial;
+  background-color: transparent;
+  border: 1px solid black;
+  margin-right: 20px;
+  font-size: 14px;
+  color: black;
+}
+.HeaderWrapper .header .Nav .btn:hover {
+  background-color: #000000;
+  color: #fff;
+}
+.HeaderWrapper .header .Nav .btn:first-child {
+  border: none;
+  box-shadow: none;
+}
 .Home {
   height: 100%;
   width: 100%;
@@ -108,6 +142,22 @@
   color: #FFF;
   font-size: 16px;
   text-decoration: underline;
+}
+.Connexion body {
+  background-color: #D6D6D6;
+}
+.Connexion body .card-panel {
+  margin-top: 20px;
+}
+.Connexion body .card-panel form {
+  background-color: #fff;
+  padding-top: 10px;
+}
+.Connexion body .card-panel form .btn {
+  float: initial;
+}
+.Connexion body .card-panel form .form-footer {
+  border-top: 1px solid #fff;
 }
 html,
 body,
