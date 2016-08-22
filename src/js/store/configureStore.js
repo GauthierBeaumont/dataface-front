@@ -7,6 +7,8 @@ import * as reducers from '../reducers'
 import { routerMiddleware } from 'react-router-redux'
 import { createResponsiveStateReducer, responsiveStoreEnhancer } from 'redux-responsive'
 
+console.log(reducers)
+
 export default function configureStore (history) {
   const sagaMiddleware = createSagaMiddleware()
   const store = createStore(
