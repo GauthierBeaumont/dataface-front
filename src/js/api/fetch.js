@@ -8,6 +8,7 @@ export const getURL = (url) => (
 
 export const postURL = (url, data) => (
   request.post(`${apiURL}/${url}`)
+    .withCredentials()
   	.send(data)
     .then(res => res.body)
 )
