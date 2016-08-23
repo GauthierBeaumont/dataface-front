@@ -9,7 +9,7 @@ export function* userLogin ({ payload: { email, password } }) {
   try {
     const user = yield call(userLoginApi, email, password)
     console.log(user)
-    if (user) yield put({ type: USER_LOGIN_SUCCESS, payload: { user } })
+    if (user.status === 'success') yield put({ type: USER_LOGIN_SUCCESS, payload: { user: user.userData } })
     else yield put({ type: USER_LOGIN_FAILED, payload: 'E-mail ou mot de passe incorrect.' })
   } catch (error) {
     yield put({ type: USER_LOGIN_FAILED, payload: 'Erreur serveur.' })
