@@ -13,38 +13,47 @@ const Inscription = () => (
 							<h2>Inscription</h2>		
 						</div>
 						<div className="col s6 right-align">
-							<a href="page-sign-in.html">Se connecter</a> / Inscription
+							<a href="/#/">Se connecter</a> / Inscription
 						</div>
 					</div>
 
 					<div className="card-panel clearfix"> 
 							<div className="input-field col m6">
 								<i className="fa fa-user prefix"></i> 
-								<input id="lastname" type="text"/>
+								<input id="lastname" name="lastname" type="text"/>
 								<label htmlFor="lastname" className="">Nom</label>
 							</div>  
 							<div className="input-field col m6">
-								<input id="firstname" type="text"/>
+								<input id="firstname" name="firstname" type="text"/>
 								<label htmlFor="firstname" className="">Prénom</label>
+							</div>
+							<div className="input-field col m6">
+								<i className="fa fa-user prefix"></i> 
+								<input id="adress" name="adress" type="text"/>
+								<label htmlFor="adress" className="">Adresse</label>
+							</div>  
+							<div className="input-field col m6">
+								<input id="country" name="country" type="text"/>
+								<label htmlFor="country" className="">Ville</label>
 							</div>
 					<div className="input-field col m12">
 						<i className="fa fa-home prefix"></i> 
-						<input id="society" type="text"/>
-						<label htmlFor="society" className="">Société</label>
+						<input id="postalCode" name="postalCode" type="text"/>
+						<label htmlFor="postalCode" className="">Code postal</label>
 					</div> 
 					<div className="input-field col m12">
 						<i className="fa fa-phone prefix"></i> 
-						<input id="tel" type="tel"/>
-						<label htmlFor="tel" className="">Téléphone</label>
+						<input id="phone" name="phone" type="tel"/>
+						<label htmlFor="phone" className="">Téléphone</label>
 					</div>  
 					<div className="input-field col m12">
 						<i className="fa fa-envelope prefix"></i> 
-						<input id="email" type="email"/>
+						<input id="email" name="email" type="email"/>
 						<label htmlFor="email" className="">Email</label>
 					</div>  
 					<div className="input-field col m12">
 						<i className="fa fa-unlock-alt prefix"></i> 
-						<input id="password" type="password"/>
+						<input id="password" name="password" type="password"/>
 						<label htmlFor="password" className="">Mot de passe</label>
 					</div> 
 
@@ -56,6 +65,9 @@ const Inscription = () => (
 					<button className="col s12 m12 l12 waves-effect waves-light btn-large z-depth-0 z-depth-1-hover">Inscription</button></div>
 
 			</form>
+
+			
+			
 			
 				</div>
 
