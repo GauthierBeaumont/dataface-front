@@ -28,7 +28,7 @@ const Inscription = () => (
 								<label htmlFor="firstname" className="">Prénom</label>
 							</div>
 							<div className="input-field col m6">
-								<i className="fa fa-user prefix"></i> 
+								<i className="fa fa-home prefix"></i> 
 								<input id="adress" name="adress" type="text"/>
 								<label htmlFor="adress" className="">Adresse</label>
 							</div>  

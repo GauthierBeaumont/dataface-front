@@ -115,6 +115,12 @@
 .Inscription .container .card-panel {
   box-shadow: 0 0px 5px rgba(0, 0, 0, 0.26);
 }
+.Inscription .container .card-panel button {
+  margin-top: 25px;
+}
+.Inscription .container .card-panel [type="checkbox"] + label {
+  line-height: 14px;
+}
 .Inscription .container h2 {
   margin: 0px;
 }
