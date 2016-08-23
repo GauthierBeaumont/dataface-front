@@ -15,7 +15,7 @@ class Test extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  testaction: () => dispatch(test()),
+  testaction: () => dispatch(test())
 })
 
 export default connect(
