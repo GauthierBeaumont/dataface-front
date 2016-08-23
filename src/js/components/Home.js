@@ -25,7 +25,7 @@ class Home extends Component{
               </div>
               <div className="Home_form_inscription">
                 <a className="Login_subscribe_text" href="#">Pas encore inscrit ?</a>
-                <button className="waves-effect waves-dark btn green" href="#">Inscription</button>
+                <a className="waves-effect waves-dark btn green" href="/#/inscription">Inscription</a>
               </div>
             </form>
             <p className="Home_body_text">

@@ -46,6 +46,13 @@ gulp.task('less', () => {
     .pipe(gulp.dest('./dist/style'));
 })
 
+gulp.task('copy', () => {
+  gulp.src('src/images/**/*')
+   .pipe(gulp.dest('dist/images'));
+  gulp.src('src/style/css/*')
+   .pipe(gulp.dest('dist/style'));
+})
+
 gulp.task('watch', ['browser-sync'], () => {
   gulp.watch('src/style/**/*.less', ['less']);
 
@@ -68,5 +75,7 @@ gulp.task('watch', ['browser-sync'], () => {
 })
 
 gulp.task('default', ['watch'], () => {
+  gulp.run('copy')
+  gulp.run('less')
   gulp.watch("./src/js/**/*.js").on('change', browserSync.reload)
 })
