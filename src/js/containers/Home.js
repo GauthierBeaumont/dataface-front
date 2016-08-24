@@ -3,10 +3,12 @@ import { connect } from 'react-redux'
 import { USER_LOGIN } from '../actions'
 import HomeComponent from '../components/Home'
 
-import { getUserError } from '../selectors/user'
+import { getUserError, getUser, getUserisLoading } from '../selectors/user'
 
 const mapStateToProps = state => ({
-  error: getUserError(state)
+  user: getUser(state),
+  error: getUserError(state),
+  loading: getUserisLoading(state)
 }) 
 
 const mapDispatchToProps = dispatch => ({
