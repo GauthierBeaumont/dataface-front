@@ -1,0 +1,289 @@
+.borderBox {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.HeaderWrapper {
+  width: 100%;
+}
+.HeaderWrapper .header {
+  padding: 10 45px;
+}
+.HeaderWrapper .header .Logo,
+.HeaderWrapper .header .Nav {
+  display: inline-block;
+  vertical-align: middle;
+}
+.HeaderWrapper .header .Logo {
+  height: 52px;
+}
+.HeaderWrapper .header .Nav {
+  width: calc(100% - 313px);
+  text-align: right;
+}
+.HeaderWrapper .header .Nav .btn {
+  text-transform: initial;
+  background-color: transparent;
+  border: 1px solid black;
+  margin-right: 20px;
+  font-size: 14px;
+  color: black;
+}
+.HeaderWrapper .header .Nav .btn:hover {
+  background-color: #000000;
+  color: #fff;
+}
+.HeaderWrapper .header .Nav .btn:first-child {
+  border: none;
+  box-shadow: none;
+}
+.Home {
+  height: 100%;
+  width: 100%;
+  background-image: url('../images/home/sky.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.Home .Home_header {
+  padding: 30px 45px;
+}
+.Home .Home_header .Logo,
+.Home .Home_header .Nav {
+  display: inline-block;
+  vertical-align: middle;
+}
+.Home .Home_header .Nav {
+  width: calc(100% - 313px);
+  text-align: right;
+}
+.Home .Home_header .Nav .btn {
+  text-transform: initial;
+  background-color: transparent;
+  border: 1px solid #FFF;
+  margin-right: 20px;
+  font-size: 14px;
+}
+.Home .Home_header .Nav .btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.Home .Home_header .Nav .btn:first-child {
+  border: none;
+  text-decoration: underline;
+  box-shadow: none;
+}
+.Home .Home_body {
+  height: calc(100% - 148px - 50px);
+}
+.Home .Home_body .Home_form_and_text {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.Home .Home_body .Home_form_and_text .Home_form {
+  margin: auto;
+  width: 500px;
+  padding: 10px 20px 20px 20px;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.Home .Home_body .Home_form_and_text .Home_form .Home_form_connexion .generic-input {
+  display: inline-block;
+  width: calc(33.33% - 20px);
+  margin-right: 20px;
+  font-size: 16px;
+  color: #FFF;
+}
+.Home .Home_body .Home_form_and_text .Home_form .Home_form_connexion .generic-input input {
+  border-bottom-color: #FFF;
+}
+.Home .Home_body .Home_form_and_text .Home_form .Home_form_connexion .generic-input input:focus {
+  box-shadow: 0 1px 0 0 #FFF;
+}
+.Home .Home_body .Home_form_and_text .Home_form .Home_form_connexion .generic-input label {
+  color: #FFF;
+}
+.Home .Home_body .Home_form_and_text .Home_form .Home_form_connexion .btn {
+  width: calc(33.33%);
+}
+.Home .Home_body .Home_form_and_text .Home_form .Home_form_inscription {
+  text-align: right;
+}
+.Home .Home_body .Home_form_and_text .Home_form .Home_form_inscription .Login_subscribe_text {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 16px;
+  color: #FFF;
+  margin-right: 20px;
+}
+.Home .Home_body .Home_form_and_text .Home_form .Home_form_inscription .Login_subscribe_text:hover {
+  text-decoration: underline;
+}
+.Home .Home_body .Home_form_and_text .Home_form .Home_form_inscription .btn {
+  width: 153.31px;
+}
+.Home .Home_body .Home_form_and_text .Home_body_text {
+  margin: auto;
+  width: 60%;
+  font-size: 20px;
+  color: #FFF;
+  text-align: center;
+  margin-top: 20px;
+}
+.Home .Home_footer {
+  height: 50px;
+  padding: 10px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.Home .Home_footer .Home_footer_link {
+  margin-right: 20px;
+  color: #FFF;
+  font-size: 16px;
+  text-decoration: underline;
+}
+.Connexion body {
+  background-color: #D6D6D6;
+}
+.Connexion body .card-panel {
+  margin-top: 20px;
+}
+.Connexion body .card-panel form {
+  background-color: #fff;
+  padding-top: 10px;
+}
+.Connexion body .card-panel form .btn {
+  float: initial;
+}
+.Connexion body .card-panel form .form-footer {
+  border-top: 1px solid #fff;
+}
+.Inscription .container {
+  height: 100%;
+}
+.Inscription .container .card-panel {
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.26);
+}
+.Inscription .container .card-panel button {
+  margin-top: 25px;
+}
+.Inscription .container .card-panel [type="checkbox"] + label {
+  line-height: 14px;
+}
+.Inscription .container h2 {
+  margin: 0px;
+}
+.Inscription .container .row .link a,
+.Inscription .container .row .link strong {
+  vertical-align: middle;
+}
+.adminNav ul,
+.serviceNav ul {
+  position: inherit;
+  margin-bottom: 0px !important;
+}
+.adminNav ul .sideTitle,
+.serviceNav ul .sideTitle {
+  font-size: 1em;
+  font-weight: bold;
+  padding: 10px;
+}
+.adminNav ul li,
+.serviceNav ul li {
+  padding: 0px;
+}
+.adminNav ul li a,
+.serviceNav ul li a {
+  width: 100%;
+}
+.adminNav ul .fa,
+.serviceNav ul .fa {
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+.adminNav .container,
+.serviceNav .container {
+  height: 100%;
+}
+.adminNav .container .card-panel,
+.serviceNav .container .card-panel {
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.26);
+}
+.adminNav .container .card-panel button,
+.serviceNav .container .card-panel button {
+  margin-top: 25px;
+}
+.adminNav .container .card-panel [type="checkbox"] + label,
+.serviceNav .container .card-panel [type="checkbox"] + label {
+  line-height: 14px;
+}
+.adminNav .container h2,
+.serviceNav .container h2 {
+  margin: 0px;
+}
+.adminNav .container .row .link a,
+.serviceNav .container .row .link a,
+.adminNav .container .row .link strong,
+.serviceNav .container .row .link strong {
+  vertical-align: middle;
+}
+.children {
+  height: 100%;
+}
+.children .buttonDelete {
+  margin-left: 15px;
+}
+html,
+body,
+.Wrapper {
+  height: 100%;
+  width: 100%;
+}
+.header {
+  padding: 15px 45px;
+  border-bottom: 1px solid #ebebeb;
+}
+.header .Logo,
+.header .Nav {
+  display: inline-block;
+  vertical-align: middle;
+}
+.header .Nav {
+  width: calc(100% - 313px);
+  text-align: right;
+}
+.header .Nav .btn {
+  text-transform: initial;
+  background-color: transparent;
+  border: 1px solid #000;
+  margin-right: 20px;
+  font-size: 14px;
+  color: #000;
+}
+.header .Nav .btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.header .Nav .btn:first-child {
+  border: none;
+  text-decoration: underline;
+  box-shadow: none;
+}
+.footer {
+  width: 100%;
+  border-top: 1px solid #ebebeb;
+  height: 110px;
+  padding: 30px;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.footer .footer_link {
+  margin-right: 20px;
+  color: #000;
+  font-size: 16px;
+  text-decoration: underline;
+}
