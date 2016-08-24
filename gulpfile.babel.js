@@ -51,6 +51,8 @@ gulp.task('copy', () => {
    .pipe(gulp.dest('dist/images'));
   gulp.src('src/style/css/*')
    .pipe(gulp.dest('dist/style'));
+  gulp.src('src/js-extern/*')
+   .pipe(gulp.dest('dist/js'));
 })
 
 gulp.task('watch', ['browser-sync'], () => {
