@@ -1,5 +1,8 @@
 import { apiURL } from './config'
 import $ from 'jquery'
+import { getCookie } from '../utils/cookie'
+
+const _token = getCookie('_token')
 
 export const getURL = (url) => {
   return new Promise((resolve, reject) => {
@@ -41,6 +44,7 @@ export const putURL = (url, data) => {
          type : 'PUT',
          dataType : 'json',
          data: data,
+         headers: { 'X-XSRF-TOKEN' : _token },
          success : (data, statut) => {
             resolve(data)
          },
@@ -58,6 +62,7 @@ export const deleteURL = (url, data) => {
          type : 'DELETE',
          dataType : 'json',
          data: data,
+         headers: { 'X-XSRF-TOKEN' : _token },
          success : (data, statut) => {
             resolve(data)
          },
