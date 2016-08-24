@@ -7,15 +7,17 @@ import Dashboard from './components/Dashboard'
 import Connexion from './components/Connexion'
 import Home from './components/Home'
 import Test from './containers/test'
+import Inscription from './components/Inscription'
 
 const App = ({ history }) => (
   <Router history={history}>
     <Route path='/'>
-      <Route component={Wrapper}>
         <IndexRoute component={Home}/>
+      <Route component={Wrapper}>
         <Route path='test' component={Test}/>
         <Route path='dashboard' component={Dashboard}/>
         <Route path='connexion' component={Connexion}/>
+        <Route path='inscription' component={Inscription}/>
       </Route>
     </Route>
   </Router>

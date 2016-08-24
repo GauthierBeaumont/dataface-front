@@ -3,12 +3,12 @@
 ##Installation :
 
   Clone the project
-  `git clone git@github.com:stevecarrasco/dataface-front.git`
+  `git clone git@github.com:SteveCarrasco/dataface-front.git`
 
   Open the folder
   `cd dataface-front`
 
-  Webpack installatiion:
+  Gulp installatiion:
   `npm install gulp -g`
 
   Install node modules:

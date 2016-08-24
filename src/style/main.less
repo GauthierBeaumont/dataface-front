@@ -2,8 +2,59 @@
 @import "./header";
 @import "./home";
 @import "./landing-main";
+@import "./inscription";
+
 
 html, body, .Wrapper{
 	height: 100%;
 	width: 100%;
 }
+.header{
+    padding: 15px 45px;
+    border-bottom: 1px solid #ebebeb;
+
+    .Logo, .Nav{
+      display: inline-block;
+      vertical-align: middle;
+    }
+	.Nav{
+	      width: calc(100% - 313px); //313px is the logo's width
+	      text-align: right;
+
+	      .btn{
+	        text-transform: initial;
+	        background-color: transparent;
+	        border: 1px solid #000;
+	        margin-right: 20px;
+	        font-size: 14px;
+	        color: #000;
+
+	        &:hover{
+	          background-color: rgba(255, 255, 255, 0.3);
+	        }
+
+	        &:first-child{
+	          border: none;
+	          text-decoration: underline;
+	          box-shadow: none;
+	        }
+	      }
+	    }
+}
+.footer{
+	width: 100%;
+	border-top: 1px solid #ebebeb;
+    height: 110px;
+    padding: 30px;
+  	position: absolute;
+    bottom: 0px;
+    text-align: center;
+    .borderBox;
+
+    .footer_link{
+      margin-right: 20px;
+      color: #000;
+      font-size: 16px;
+      text-decoration: underline;
+    }
+ }
