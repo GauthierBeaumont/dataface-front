@@ -65,10 +65,6 @@ const Inscription = () => (
 					<button className="col s12 m12 l12 waves-effect waves-light btn-large z-depth-0 z-depth-1-hover">Inscription</button></div>
 
 			</form>
-
-			
-			
-			
 				</div>
 
 		</div>
