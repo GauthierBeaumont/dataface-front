@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
 
-const HoverActionStyles = {
-    normal: {
-        zIndex:'1003',
-        opacity: '0',
-        transform: 'scaleX(0.7)',
-        top: '583.519px'        
-    }
-};
+
 
 export default class ModalPayment extends Component {
   render() {
     return (
-      <div id="modalpayement"  style ={HoverActionStyles.normal}>
+      <div id="modalpayement"  >
         <div className="modal-content flow-text">
             <form action="" method="POST" id="payment-form">
               <span className="payment-errors"></span>
