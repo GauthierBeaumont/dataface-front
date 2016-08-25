@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Dashboard = () => (
+const Dashboard = ({ children }) => (
   <div className="Dashboard">
-    DataFace
+    { children }
   </div>
 )
 

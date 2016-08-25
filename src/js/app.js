@@ -8,6 +8,7 @@ import Produit from './components/Produit'
 import Home from './containers/Home'
 import Test from './containers/test'
 import Inscription from './components/Inscription'
+import ManageUsers from './components/ManageUsers'
 
 const App = ({ history }) => (
   <Router history={history}>
@@ -15,7 +16,9 @@ const App = ({ history }) => (
      <IndexRoute component={Home}/>
       <Route component={Wrapper}>
         <Route path='test' component={Test}/>
-        <Route path='dashboard' component={Dashboard}/>
+        <Route path='dashboard' component={Dashboard}>
+          <Route path='gestion-utilisateurs' component={ManageUsers}/>
+        </Route>
         <Route path='produits' component={Produit}/>
         <Route path='inscription' component={Inscription}/>
       </Route>
