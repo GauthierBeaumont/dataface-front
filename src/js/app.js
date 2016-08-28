@@ -7,15 +7,16 @@ import Dashboard from './components/Dashboard'
 import Connexion from './components/Connexion'
 import Inscription from './components/Inscription'
 import Abonnements from './components/Abonnements'
-import Profil from './components/Profil'
+import Profil from './containers/Profil'
 import Applications from './components/Applications'
 import Produit from './components/Produit'
 import Home from './containers/Home'
 import Test from './containers/test'
+import Index from './components/Index'
 
 const App = ({ history }) => (
   <Router history={history}>
-    <Route path='/'>
+    <Route path='/' components={Index}>
       <IndexRoute component={Home}/>
       <Route component={Wrapper}>
         <Route path='test' component={Test}/>

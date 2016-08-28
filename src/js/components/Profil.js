@@ -1,71 +1,103 @@
-import React from 'react'
+import React, { Component } from 'react'
+import $ from 'jquery'
 
-const Profil = () => (
+class Profil extends Component{
+   constructor(props){
+      super(props)
+      this.state = { name: 'Beaumont', prenom: 'Gauthier' }
+   }
 
-				<div className="col m10 s10 l10">
-			<form action="" method="POST">
+   render() {
+   		const { user } = this.props
+      return (
+         <div className="Profil">
+          <div className="container">
+            <div className="content">
+               <div className="row">
 
-					<div className="row">
-						<div className="col s6">
-							<h2>Inscription</h2>		
-						</div>
-						<div className="col s6 right-align">
-							<a href="/#/">Se connecter</a> / Inscription
-						</div>
-					</div>
+                  <div className="col m8 s8 l8 offset-s2 offset-m2 offset-l2">
+                     <form action="" method="POST">
+                        <div className="row">
+                           <div className="col s12 center-align">
+                              <h2>Profil de { this.state.name } { this.state.prenom }</h2>
+                           </div>
+                        </div>
+                        <div className="card-panel clearfix">
+                           <div className="input-field col m6">
+                              <i className="fa fa-user prefix"></i>
+                              <input id="lastname" type="text"/>
+                              <label htmlFor="lastname" className="">Nom</label>
+                           </div>
+                           <div className="input-field col m6">
+                              <input id="firstname" type="text"/>
+                              <label htmlFor="firstname" className="">Prenom</label>
+                           </div>
+                           <div className="input-field col m6">
+                              <i className="fa fa-user prefix"></i>
+                              <input id="address" type="text"/>
+                              <label htmlFor="address" className="">Adresse</label>
+                           </div>
+                           <div className="input-field col m6">
+                              <input id="country" type="text"/>
+                              <label htmlFor="country" className="">Ville</label>
+                           </div>
+                           <div className="input-field col m12">
+                              <i className="fa fa-home prefix"></i>
+                              <input id="postal_code" type="text"/>
+                              <label htmlFor="postal_code" className="">Code postal</label>
+                           </div>
+                           <div className="input-field col m12">
+                              <i className="fa fa-phone prefix"></i>
+                              <input id="phone" type="text"/>
+                              <label htmlFor="phone" className="">Téléphone</label>
+                           </div>
+                           <div className="input-field col m12">
+                              <i className="fa fa-envelope prefix"></i>
+                              <input id="email" type="text"/>
+                              <label htmlFor="email" className="">Email</label>
+                           </div>
+                           <div className="input-field col m12">
+                              <i className="fa fa-unlock-alt prefix"></i>
+                              <input id="password" type="text"/>
+                              <label htmlFor="password" className="">Mot de passe</label>
+                           </div>
 
-					<div className="card-panel clearfix"> 
-							<div className="input-field col m6">
-								<i className="fa fa-user prefix"></i> 
-								<input id="lastname" name="lastname" type="text"/>
-								<label htmlFor="lastname" className="">Nom</label>
-							</div>  
-							<div className="input-field col m6">
-								<input id="firstname" name="firstname" type="text"/>
-								<label htmlFor="firstname" className="">Prénom</label>
-							</div>
-							<div className="input-field col m5">
-								<i className="fa fa-home prefix"></i> 
-								<input id="address" name="address" type="text"/>
-								<label htmlFor="address" className="">Adresse</label>
-							</div>  
-							<div className="input-field col m5">
-								<input id="country" name="country" type="text"/>
-								<label htmlFor="country" className="">Ville</label>
-							</div>
-							<div className="input-field col m2">
-								<input id="postalCode" name="postalCode" type="text"/>
-								<label htmlFor="postalCode" className="">Code postal</label>
-							</div>
-					
-					<div className="input-field col m12">
-						<i className="fa fa-phone prefix"></i> 
-						<input id="phone" name="phone" type="tel"/>
-						<label htmlFor="phone" className="">Téléphone</label>
-					</div>  
-					<div className="input-field col m12">
-						<i className="fa fa-envelope prefix"></i> 
-						<input id="email" name="email" type="email"/>
-						<label htmlFor="email" className="">Email</label>
-					</div>  
-					<div className="input-field col m12">
-						<i className="fa fa-unlock-alt prefix"></i> 
-						<input id="password" name="password" type="password"/>
-						<label htmlFor="password" className="">Mot de passe</label>
-					</div> 
+                           <div className="row">
+                              <div className="col m12 center-align">
+                                 <a className="btn" onClick={(e) => this.updateProfile(e)}>Update</a>
+                                 <a className="btn red" onClick={(e) => this.deleteProfile(e)}>Delete</a>
+                              </div>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
 
-					<p>
-					<input type="checkbox" id="checkbox_terms"/>
-					<label htmlFor="checkbox_terms">Acceptez les Conditions d’utilisation.
-					</label>
-					</p>
-					<button className="col s12 m12 l12 waves-effect waves-light btn-large z-depth-0 z-depth-1-hover">Inscription</button></div>
+               </div>
+            </div>
+         </div>
+        </div>
+      )
+   }
 
-			</form>
+   updateProfile(e){
+      e.preventDefault();
 
-			
+      var lastname = $('#lastname').val();
+      var firstname = $('#firstname').val();
+      var email = $('#email').val();
+      var password = $('#password').val();
+      var address = $('#address').val();
+      var country = $('#country').val();
+      var phone = $('#phone').val();
+      var postal_code = $('#postal_code').val();
 
-	</div>
-)
+      //this.setState({name: lastname })
+   }
 
-export default Profil	
+   deleteProfile(e){
+      e.preventDefault();
+   }
+
+}
+
+export default Profil
