@@ -12,10 +12,10 @@ class Dashboard extends Component {
     			<div className="adminNav">
 	    			<div className="container-fluid">
 	    				<div className="row">
-	    						<div className="col m2 l2">					   			
+	    						<div className="col m2 l2">
 								<ul id="slide-out" className ="side-nav">
 									<li className ="sideTitle center">
-										<i className="fa fa-user"></i> 
+										<i className="fa fa-user"></i>
 												<span>ADMIN</span>
 									</li>
 									<li>
@@ -32,7 +32,7 @@ class Dashboard extends Component {
 								    </li>
 								    <li>
 										<a className="waves-effect waves-light" href="/#/administration"><i className="fa fa-cog"></i> Administration du site</a>
-								    </li>			    
+								    </li>
 								</ul>
 								</div>
 		    				<div className=" col m10 l10 children">{ this.props.children }</div>
@@ -50,7 +50,7 @@ class Dashboard extends Component {
 	    						<div className="col m2 l2">
 								<ul id="slide-out" className ="side-nav">
 									<li className ="sideTitle center">
-										<i className="fa fa-user"></i> 
+										<i className="fa fa-user"></i>
 												<span>SERVICES</span>
 									</li>
 									<li>
@@ -64,7 +64,7 @@ class Dashboard extends Component {
 								    </li>
 								    <li>
 										<a className="waves-effect waves-light" href="/#/applications"><i className="fa fa-list-alt"></i> Gestion des applications</a>
-								    </li>			    
+								    </li>
 									<li>
 										<a className="waves-effect waves-light" href="/#/FAQ"><i className="fa fa-question-circle"></i> FAQ</a>
 								    </li>
