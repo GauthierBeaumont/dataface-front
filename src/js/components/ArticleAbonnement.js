@@ -1,9 +1,6 @@
-import React from 'react'
-import ModalPayment from './ModalPayment'
-
 import React, { Component } from 'react';
 
-export class ArticleAbonnement extends Component {
+class ArticleAbonnement extends Component {
     constructor(props){
         super(props)
         this.state = { displaymodal : false }
@@ -11,6 +8,7 @@ export class ArticleAbonnement extends Component {
 
     render() {
         const abonnement = this.props.abonnement
+        const displaymodal = this.state.displaymodal
         return (
             <div className={ abonnement.order == 1 ? "pt-col-4 pt-featured" : "pt-col-4" }>
                 <div className="pt-header">
@@ -30,11 +28,10 @@ export class ArticleAbonnement extends Component {
                     }
                 </div>
                 {
-                    displaymodal != fase
-                    ?<ModalPayment/>
-                    :<noscript/>
+                    displaymodal
+                        ?   <ModalPayment/>
+                        :   <noscript/>
                 }
-                
             </div>
         )
     }
@@ -49,4 +46,4 @@ export class ArticleAbonnement extends Component {
     }
 }
 
-
+export default ArticleAbonnement
