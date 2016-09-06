@@ -3,12 +3,10 @@ import React, { Component } from 'react'
 class ListeUsers extends Component{
     constructor(props){
       super(props);
-      this.state = {admin: 0}
+      this.state = {admin: 1}
     }
    render() {
       const user = this.props.user
-
-
       return (
          <ul className="collapsible popout" data-collapsible="accordion">
             <li>
@@ -29,7 +27,6 @@ class ListeUsers extends Component{
                              <th data-field="id_docker">Id Docker</th>
                              <th data-field="status">Status</th>
                              <th data-field="dt_create">Date de création</th>
-                             <th data-field="action">Actions</th>
                          </tr>
                      </thead>
 
@@ -41,19 +38,11 @@ class ListeUsers extends Component{
                               <td>{application.id_docker}</td>
                               <td>{application.status}</td>
                               <td>{application.dt_creation}</td>
-                              <td className="actionBtn">
-                              <a className="btn green" onClick={(e) => this.updateApplication(e)}>Update</a>
-                              <a className="btn red" onClick={(e) => this.deleteApplication(e)}>Delete</a>
-                              </td></tr>
+                              </tr>
                            })
                         }
                      </tbody>
                   </table>
-                     {
-                        this.state.admin
-                           ? <i className="fa fa-plus-circle fa-2x" aria-hidden="true" onClick ={ () => this.addApplication() }></i>
-                           : <noscript/>
-                     }
 
                </div>
             </li>
@@ -63,21 +52,10 @@ class ListeUsers extends Component{
 
 
 
-   addApplication(){
-
-   }
-
-   deleteApplication(){
-
-   }
-
    deleteUser(){
 
    }
 
-   updateApplication(){
-
-   }
 
 }
 

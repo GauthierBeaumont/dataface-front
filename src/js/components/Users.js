@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ListesUsers from './ListesUsers'
+import ModalUsers from './ModalUsers'
 import $ from 'jquery'
 
 class Users extends Component{
@@ -94,48 +95,62 @@ class Users extends Component{
                    status : "en ligne",
                    dt_creation: "2015-06-08"
                  }
-              ]
+              ],
+              displaymodaladduser:false,
+              btnadduser:true,
             },
          ]
       }
    }
 
    render() {
+      var self = this;
       return (
          <div className="Users">
-         <div className="col m10 left-align">
-           <a className="btn-floating btn-large waves-effect waves-light red"><i className="material-icons">add</i></a>
-         </div>
-          <div className="container">
-            <div className="content">
-               <div className="row">
-                  <div className="col m12 s12 l12 ">
-                     <div className="row">
-                        <div className="col s12 center-align">
-                           <h2>Liste des utilisateurs</h2>
-                        </div>
-                     </div>
-                     {
-                        this.state.users.map(function(user, i){
-                           return <ListesUsers key={i} user={user}/>
-                        })
-                     }
+             <div className="container">
+               <div className="content">
+                  <div className="row">
+                     <div className="col m12 s12 l12 ">
+                        <div className="row title">
+                           <div className="col m2 l2 s2 left-align adduser" onClick={(e) => self.openmodaladduser(e)}>
+                             <a className="btn-floating btn-large waves-effect waves-light red"  ><i className="material-icons">add</i></a>
+                           </div>
+                           <div className="col s10 m10 l10 center-align">
+                              <h2>Liste des utilisateurs</h2>
+                           </div>
 
+                        </div>
+
+                        {
+                           this.state.users.map(function(user, i){
+                              return <ListesUsers key={i} user={user}/>
+                           })
+                        }
+
+                     </div>
                   </div>
                </div>
             </div>
-         </div>
+            {
+                  this.state.displaymodaladduser
+                       ?   <ModalUsers closemodaladduser={(e) => self.closemodaladduser(e)} />
+                       :   <noscript/>
+               }
         </div>
       )
    }
 
-   createResponse(e){
+      openmodaladduser(e, ){
+        e.preventDefault()
+        $('.adduser').hide()
+        this.setState({displaymodaladduser:true,btnadduser:false})
 
-      e.preventDefault();
-      var titleQuestion = $('#titleQuestion').val();
-      var question = $('#question').val();
-
-   }
+    }
+    closemodaladduser(e){
+        e.preventDefault()
+        $('.adduser').show()
+        this.setState({displaymodaladduser:false})
+    }
 
 }
 
