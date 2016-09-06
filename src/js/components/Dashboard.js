@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Dashboard extends Component {
     constructor(props) {
         super(props)
-        this.state = { admin: true }
+        this.state = { admin: false }
     }
 
     render() {
@@ -32,13 +32,14 @@ class Dashboard extends Component {
 								    </li>
 								    <li>
 										<a className="waves-effect waves-light" href="/#/administration"><i className="fa fa-cog"></i> Administration du site</a>
-								    </li>
+									</li>
 								</ul>
 								</div>
 		    				<div className=" col m10 l10 children">{ this.props.children }</div>
 						</div>
 					</div>
 				</div>
+
 
     		)
     	}
@@ -76,5 +77,4 @@ class Dashboard extends Component {
 				</div>        )
     }
 }
-
 export default Dashboard

@@ -14,6 +14,7 @@ import Home from './containers/Home'
 import Test from './containers/test'
 import Index from './components/Index'
 import Users from './components/Users'
+import Administration from './components/Administration'
 
 const App = ({ history }) => (
   <Router history={history}>
@@ -28,6 +29,7 @@ const App = ({ history }) => (
           <Route path='profil' component={Profil}/>
           <Route path='applications' component={Applications}/>
           <Route path='users' component={Users}/>
+          <Route path='administration' component={Administration}/>
         </Route>
         <Route path='inscription' component={Inscription}/>
       </Route>
