@@ -10,7 +10,7 @@ class Home extends Component{
     this.state = { internError: '' }
     context.router
   }
-  
+
   render () {
     const { loading, error } = this.props
     const { internError } = this.state
@@ -37,15 +37,15 @@ class Home extends Component{
                 }
                 <Input type="text" id="Login_email" label="E-mail" className="Login_email"/>
                 <Input type="password" id="Login_password" label="Mot de passe" className="Login_password"/>
-                <button className="waves-effect waves-dark btn indigo" disabled={ loading } href="#" onClick={(e) => this.login(e)}>{ loading ? 'Connexion ...' : 'Connexion' }</button>
+                <button className="waves-effect waves-dark btn deep-orange" disabled={ loading } href="#" onClick={(e) => this.login(e)}>{ loading ? 'Connexion ...' : 'Connexion' }</button>
               </div>
               <div className="Home_form_inscription">
                 <a className="Login_subscribe_text" href="#">Pas encore inscrit ?</a>
-                <a className="waves-effect waves-dark btn green" href="/#/inscription">Inscription</a>
+                <a className="waves-effect waves-dark btn orange" href="/#/inscription">Inscription</a>
               </div>
             </form>
             <p className="Home_body_text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </div>
         </div>
