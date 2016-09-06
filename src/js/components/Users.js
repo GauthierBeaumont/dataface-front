@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import User from './Users'
+import ListesUsers from './ListesUsers'
 import $ from 'jquery'
 
 class Users extends Component{
@@ -7,97 +7,97 @@ class Users extends Component{
       super(props)
       this.state = {
          users: [
-            { User: 'User 1',
+            { user: 'User 1',
               status: "free",
               dt_creation:"2015-06-08",
               status_facture:"2015-06-08",
-              Applications:
-                { name:"application 1",
-                  id_docker:"qsDqsdqsD18",
-                  status : "en ligne",
-                  dt_creation: "2015-06-08"
-                },
-                { name:"application 2",
-                  id_docker:"qsDqsdqsD18",
-                  status : "en ligne",
-                  dt_creation: "2015-06-08"
-                },
-                { name:"application 3",
-                  iid_docker:"qsDqsdqsD18",
-                  status : "en ligne",
-                  dt_creation: "2015-06-08"
-                },
+              applications:[
+                 { name:"application 1",
+                   id_docker:"qsDqsdqsD18",
+                   status : "en ligne",
+                   dt_creation: "2015-06-08"
+                 },
+                 { name:"application 2",
+                   id_docker:"qsDqsdqsD18",
+                   status : "en ligne",
+                   dt_creation: "2015-06-08"
+                 },
+                 { name:"application 3",
+                   iid_docker:"qsDqsdqsD18",
+                   status : "en ligne",
+                   dt_creation: "2015-06-08"
+                 }
+              ]
 
             },
-            { User: 'User 2',
+            { user: 'User 2',
               status: "free",
               dt_creation:"2015-06-08",
               status_facture:"2015-06-08",
-              Applications:
-                { name:"application 1",
-                  id_docker:"qsDqsdqsD18",
-                  status : "en ligne",
-                  dt_creation: "2015-06-08"
-                },
-                { name:"application 2",
-                  id_docker:"qsDqsdqsD18",
-                  status : "en ligne",
-                  dt_creation: "2015-06-08"
-                },
-                { name:"application 3",
-                  iid_docker:"qsDqsdqsD18",
-                  status : "en ligne",
-                  dt_creation: "2015-06-08"
-                },
-
+              applications:[
+                 { name:"application 1",
+                   id_docker:"qsDqsdqsD18",
+                   status : "en ligne",
+                   dt_creation: "2015-06-08"
+                 },
+                 { name:"application 2",
+                   id_docker:"qsDqsdqsD18",
+                   status : "en ligne",
+                   dt_creation: "2015-06-08"
+                 },
+                 { name:"application 3",
+                   iid_docker:"qsDqsdqsD18",
+                   status : "en ligne",
+                   dt_creation: "2015-06-08"
+                 }
+              ]
             },
-            { User: 'User 3',
+            { user: 'User 3',
               status: "free",
               dt_creation:"2015-06-08",
               status_facture:"2015-06-08",
-              Applications:
-                { name:"application 1",
-                  id_docker:"qsDqsdqsD18",
-                  status : "en ligne",
-                  dt_creation: "2015-06-08"
-                },
-                { name:"application 2",
-                  id_docker:"qsDqsdqsD18",
-                  status : "en ligne",
-                  dt_creation: "2015-06-08"
-                },
-                { name:"application 3",
-                  iid_docker:"qsDqsdqsD18",
-                  status : "en ligne",
-                  dt_creation: "2015-06-08"
-                },
-
+              applications:[
+                 { name:"application 1",
+                   id_docker:"qsDqsdqsD18",
+                   status : "en ligne",
+                   dt_creation: "2015-06-08"
+                 },
+                 { name:"application 2",
+                   id_docker:"qsDqsdqsD18",
+                   status : "en ligne",
+                   dt_creation: "2015-06-08"
+                 },
+                 { name:"application 3",
+                   iid_docker:"qsDqsdqsD18",
+                   status : "en ligne",
+                   dt_creation: "2015-06-08"
+                 }
+              ]
             },
-            { User: 'User 4',
+            { user: 'User 4',
               status: "free",
               dt_creation:"2015-06-08",
               status_facture:"2015-06-08",
-              Applications:
-                { name:"application 1",
-                  id_docker:"qsDqsdqsD18",
-                  status : "en ligne",
-                  dt_creation: "2015-06-08"
-                },
-                { name:"application 2",
-                  id_docker:"qsDqsdqsD18",
-                  status : "en ligne",
-                  dt_creation: "2015-06-08"
-                },
-                { name:"application 3",
-                  iid_docker:"qsDqsdqsD18",
-                  status : "en ligne",
-                  dt_creation: "2015-06-08"
-                },
-
+              applications:[
+                 { name:"application 1",
+                   id_docker:"qsDqsdqsD18",
+                   status : "en ligne",
+                   dt_creation: "2015-06-08"
+                 },
+                 { name:"application 2",
+                   id_docker:"qsDqsdqsD18",
+                   status : "en ligne",
+                   dt_creation: "2015-06-08"
+                 },
+                 { name:"application 3",
+                   iid_docker:"qsDqsdqsD18",
+                   status : "en ligne",
+                   dt_creation: "2015-06-08"
+                 }
+              ]
             },
          ]
       }
-
    }
 
    render() {
@@ -109,7 +109,7 @@ class Users extends Component{
           <div className="container">
             <div className="content">
                <div className="row">
-                  <div className="col m8 s8 l8 offset-s2 offset-m2 offset-l2">
+                  <div className="col m12 s12 l12 ">
                      <div className="row">
                         <div className="col s12 center-align">
                            <h2>Liste des utilisateurs</h2>
@@ -117,7 +117,7 @@ class Users extends Component{
                      </div>
                      {
                         this.state.users.map(function(user, i){
-                           return <Users key={i} user={user}/>
+                           return <ListesUsers key={i} user={user}/>
                         })
                      }
 
@@ -128,15 +128,6 @@ class Users extends Component{
         </div>
       )
    }
-
-   var TodoList = React.createClass({
-                    render: function(){
-                            var createItem = function(itemText) {
-                              return <li>{itemText}</li>;
-                            };
-                            return <ul>{this.props.items.map(createItem)}</ul>;
-                        }
-                });
 
    createResponse(e){
 

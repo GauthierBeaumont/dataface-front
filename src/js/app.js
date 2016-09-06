@@ -13,6 +13,7 @@ import Produit from './components/Produit'
 import Home from './containers/Home'
 import Test from './containers/test'
 import Index from './components/Index'
+import Users from './components/Users'
 
 const App = ({ history }) => (
   <Router history={history}>
@@ -26,6 +27,7 @@ const App = ({ history }) => (
           <Route path='abonnements' component={Abonnements}/>
           <Route path='profil' component={Profil}/>
           <Route path='applications' component={Applications}/>
+          <Route path='users' component={Users}/>
         </Route>
         <Route path='inscription' component={Inscription}/>
       </Route>
