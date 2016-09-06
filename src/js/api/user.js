@@ -1,6 +1,4 @@
 import { postURL, getURL } from './fetch'
-import $ from 'jquery'
-
 
 export const userLoginApi = (email, password) => {
 	return postURL('login', { email, password })

@@ -10,11 +10,11 @@ export const getURL = (url) => {
          url : `${apiURL}/${url}`,
          type : 'GET',
          dataType : 'json',
-         success : (data, statut) => {
-            resolve(data)
+         success : (data, status, xhr) => {
+            resolve(data, xhr.status)
          },
-         error : (result, statut, error) => {
-            reject(error)
+         error : (xhr, status, error) => {
+            reject(error, xhr.status)
          }
       });
   })
@@ -27,11 +27,11 @@ export const postURL = (url, data) => {
          type : 'POST',
          dataType : 'json',
          data: data,
-         success : (data, statut) => {
-            resolve(data)
+         success : (data, status, xhr) => {
+            resolve(data, xhr.status)
          },
-         error : (result, statut, error) => {
-            reject(error)
+         error : (xhr, status, error) => {
+            reject(error, xhr.status)
          }
       });
   })
@@ -45,11 +45,11 @@ export const putURL = (url, data) => {
          dataType : 'json',
          data: data,
          headers: { 'X-XSRF-TOKEN' : _token },
-         success : (data, statut) => {
-            resolve(data)
+         success : (data, status, xhr) => {
+            resolve(data, xhr.status)
          },
-         error : (result, statut, error) => {
-            reject(error)
+         error : (xhr, status, error) => {
+            reject(error, xhr.status)
          }
       });
   })
@@ -63,11 +63,11 @@ export const deleteURL = (url, data) => {
          dataType : 'json',
          data: data,
          headers: { 'X-XSRF-TOKEN' : _token },
-         success : (data, statut) => {
-            resolve(data)
+         success : (data, status, xhr) => {
+            resolve(data, xhr.status)
          },
-         error : (result, statut, error) => {
-            reject(error)
+         error : (xhr, status, error) => {
+            reject(error, xhr.status)
          }
       });
   })
