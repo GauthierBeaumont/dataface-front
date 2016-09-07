@@ -1,4 +1,4 @@
-import { call, put } from 'redux-saga/effects'
+import { call, put, select } from 'redux-saga/effects'
 import { takeEvery } from 'redux-saga'
 import { USER_LOGIN, USER_LOGIN_SUCCESS, USER_LOGIN_FAILED, 
   USER_SET_USER, USER_GET_USER, USER_LOGOUT,
@@ -20,25 +20,28 @@ export function* userLogin ({ payload: { email, password } }) {
 
 export function* fetchUser () {
   try {
-    const userConnected = getUser()
+    const userConnected = yield select(getUser)
     const userId = getCookie('dataface-user-id')
     if (!userConnected && userId) {
       const user = yield call(fetchUserApi, userId)
       if (user) yield put({ type: USER_SET_USER, payload: { user } })
     }
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 export function* saveProfile ({ payload: { user } }) {
   try {
     const userId = getCookie('dataface-user-id')
-    const updateRequest = yield call(updateUserApi, userId, user)
-    if (updateRequest.status === 'suceess') {
+    const updateRequest = yield call(updateUserApi, userId, { id: userId, ...user })
+    if (updateRequest.status === true) {
       yield put({ type: USER_SAVE_PROFILE_SUCCESS, payload: { user } })
     } else {
      yield put({ type: USER_SAVE_PROFILE_FAILED })
     }
   } catch (error) {
+    console.log(error)
     yield put({ type: USER_SAVE_PROFILE_FAILED })
   }
 }
@@ -48,7 +51,7 @@ export function* deleteUser () {
   try {
     const userId = getCookie('dataface-user-id')
     const deleteRequest = yield call(deleteUserApi, userId)
-    if (deleteRequest.status === 'suceess') {
+    if (deleteRequest.status === 1) {
       yield put({ type: USER_DELETE_SUCCESS })
       yield put({ type: USER_LOGOUT })
     } else {

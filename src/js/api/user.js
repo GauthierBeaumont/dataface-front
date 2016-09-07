@@ -5,13 +5,13 @@ export const userLoginApi = (email, password) => {
 }
 
 export const fetchUserApi = (userId) => {
-	return getURL(`user/${userId}`)
+	return getURL(`profile/${userId}`)
 }
 
-export const updateUserApi = (userId, user) => {
-	return putURL(`profile/${userId}`, { user })
+export const updateUserApi = (userId, { id, firstName, lastName, address, country, postalCode, phone, password }) => {
+	return putURL(`profile/${userId}`, { id, firstName, lastName, address, country, postalCode, phone, password })
 }
 
 export const deleteUserApi = (userId) => {
-	return deleteURL(`user/${userId}`)
+	return deleteURL(`profile/${userId}`)
 }

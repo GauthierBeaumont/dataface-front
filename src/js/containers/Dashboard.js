@@ -18,7 +18,11 @@ class Dashboard extends Component {
   }
 
   componentWillMount() {
-  	if (!this.props.user) this.context.router.push('/')
+  	if (!getCookie('dataface-user-id')) this.context.router.push('/')
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (!nextProps.user && this.props.user) this.context.router.push('/')
   }
 }
 

@@ -18,17 +18,18 @@ const user = (state = defaultState, { type, payload }) => {
     case USER_LOGIN_FAILED:
       return { ...state, error: payload }
     case USER_SET_USER:
-      return { ...state, user: payload.user }
+      return { ...state, user: payload.user.profile }
     case USER_DELETE_FAILED:
     case USER_SAVE_PROFILE_FAILED:
-      return { ...state, editStatus: { type: 'error', text: 'Une erreur est survenuee merci de ressayer plutard.' } }
+      return { ...state, editStatus: { type: 'error', text: 'Une erreur est survenue merci de ressayer plutard.' } }
     case USER_SAVE_PROFILE_SUCCESS:
-      return { ...state, editStatus: { type: 'success', text: 'Votre profil a bien été modifié' } }
+      console.log({ ...state.user, ...payload.user })
+      return { ...state, editStatus: { type: 'success', text: 'Votre profil a bien été modifié' }, user: { ...state.user, ...payload.user } }
     case USER_LOGOUT:
       removeCookie('dataface-user-id')
-      return { ...state }
+      return { ...state, user: null }
     case '@@router/LOCATION_CHANGE':
-      return { ...state, editStatus: '' }
+      return { ...state, editStatus: '', loading: false }
     default:
       return state
   }

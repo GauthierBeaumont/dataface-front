@@ -4,11 +4,11 @@ import ErrorMessage from './commons/ErrorMessage'
 import SuccessMessage from './commons/SuccessMessage'
 
 const defaultErrorState = {
-   firstName: null, 
-   lastName: null, 
+   firstname: null, 
+   lastname: null, 
    address: null, 
    country: null, 
-   postalCode: null, 
+   postal_code: null, 
    phone: null, 
    email: null, 
    password: null,
@@ -33,7 +33,7 @@ class Profil extends Component{
    }
 
    render() {
-      const { firstName, lastName, address, country, postalCode, phone, email, password, password_confirmation, checkbox_terms } = this.state.errors
+      const { firstname, lastname, address, country, postal_code, phone, email, password, password_confirmation, checkbox_terms } = this.state.errors
       return (
          <div className="Profil">
           <div className="container">
@@ -54,8 +54,8 @@ class Profil extends Component{
                            </div>
                         </div>
                         <div className="card-panel clearfix">
-                           { lastName ? <ErrorMessage message={lastName}/> : <noscript/> }
-                           { firstName ? <ErrorMessage message={firstName}/> : <noscript/> }
+                           { lastname ? <ErrorMessage message={lastname}/> : <noscript/> }
+                           { firstname ? <ErrorMessage message={firstname}/> : <noscript/> }
                            <div className="input-field col m6">
                               <i className="fa fa-user prefix"></i>
                               <input id="lastname" type="text" value={ this.state.lastname } onChange={(e) => this.setState({lastname: e.target.value})}/>
@@ -68,15 +68,15 @@ class Profil extends Component{
                            { address ? <ErrorMessage message={address}/> : <noscript/> }
                            { country ? <ErrorMessage message={country}/> : <noscript/> }
                            <div className="input-field col m6">
-                              <i className="fa fa-user prefix"></i>
+                              <i className="fa fa-usre prefix"></i>
                               <input id="address" type="text"  value={ this.state.address } onChange={(e) => this.setState({address: e.target.value})}/>
                               <label htmlFor="address" className="">Adresse</label>
                            </div>
                            <div className="input-field col m6">
                               <input id="country" type="text"  value={ this.state.country } onChange={(e) => this.setState({country: e.target.value})}/>
-                              <label htmlFor="country" className="">Ville</label>
+                              <label htmlFor="country" className="">Pays</label>
                            </div>
-                           { postalCode ? <ErrorMessage message={postalCode}/> : <noscript/> }
+                           { postal_code ? <ErrorMessage message={postal_code}/> : <noscript/> }
                            <div className="input-field col m12">
                               <i className="fa fa-home prefix"></i>
                               <input id="postal_code" type="text" value={ this.state.postal_code } onChange={(e) => this.setState({postal_code: e.target.value})}/>
@@ -85,7 +85,7 @@ class Profil extends Component{
                            { phone ? <ErrorMessage message={phone}/> : <noscript/> }
                            <div className="input-field col m12">
                               <i className="fa fa-phone prefix"></i>
-                              <input id="phone" name="phone" type="number"  value={ this.state.phone } onChange={(e) => this.setState({phone: e.target.value})}/>
+                              <input id="phone" name="phone" type="tel"  value={ this.state.phone } onChange={(e) => this.setState({phone: e.target.value})}/>
                               <label htmlFor="phone" className="">Téléphone</label>
                            </div>
                            { password ? <ErrorMessage message={password}/> : <noscript/> }
@@ -117,20 +117,20 @@ class Profil extends Component{
       let errors = { ...defaultErrorState }
       let hasError = false
 
-      const firstName = document.querySelector('#firstname').value
-      const lastName = document.querySelector('#lastname').value
+      const firstname = document.querySelector('#firstname').value
+      const lastname = document.querySelector('#lastname').value
       const address = document.querySelector('#address').value
       const country = document.querySelector('#country').value
-      const postalCode = document.querySelector('#postal_code').value
+      const postal_code = document.querySelector('#postal_code').value
       const phone = document.querySelector('#phone').value
       const password = document.querySelector('#password').value
 
-      if (!firstName) {
-         errors.firstName = 'Veuillez saisir un prenom correct'
+      if (!firstname) {
+         errors.firstname = 'Veuillez saisir un prenom correct'
          hasError = true
       }
-      if (!lastName) {
-         errors.lastName = 'Veuillez saisir un nom correct'
+      if (!lastname) {
+         errors.lastname = 'Veuillez saisir un nom correct'
          hasError = true
       }
       if (!address) {
@@ -141,8 +141,8 @@ class Profil extends Component{
          errors.country = 'Veuillez saisir une ville correcte'
          hasError = true
       }
-      if (!postalCode) {
-         errors.postalCode = 'Veuillez saisir un code postal correct'
+      if (!postal_code) {
+         errors.postal_code = 'Veuillez saisir un code postal correct'
          hasError = true
       }
       if (!phone) {
@@ -157,7 +157,9 @@ class Profil extends Component{
       this.setState({errors})
 
       if (!hasError){
-         this.props.saveProfile({ firstName, lastName, address, country, postalCode, phone, password })
+         let user = { firstname, lastname, address, country, postal_code, phone }
+         user = password ? { ...user, password } : user
+         this.props.saveProfile(user)
       }
    }
 
