@@ -7,7 +7,10 @@ const user = (state = { user: null, loading: false, error: '' }, { type, payload
       return { ...state, loading: true }
     case USER_LOGIN_SUCCESS:
       setCookie('dataface-user-id', payload.user.id, 7)
-      return { ...state, user: payload.user, loading: false, error: '' }
+      const user = payload.user
+      delete user.password
+      delete user.passord_confirmation
+      return { ...state, user, loading: false, error: '' }
     case USER_LOGIN_FAILED:
       return { ...state, error: payload, loading: false }
     case USER_SET_USER:
