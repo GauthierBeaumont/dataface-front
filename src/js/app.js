@@ -10,6 +10,7 @@ import Abonnements from './components/Abonnements'
 import Profil from './containers/Profil'
 import Applications from './components/Applications'
 import AddApplication from './components/AddApplication'
+import Table from './components/Table'
 import UpdateApplication from './components/UpdateApplication'
 import Produit from './components/Produit'
 import Confidentialite from './components/Confidentialite'
@@ -32,7 +33,8 @@ const App = ({ history }) => (
           <Route path='abonnements' component={Abonnements}/>
           <Route path='profil' component={Profil}/>
           <Route path='applications' component={Applications}/>
-          <Route path='applications/add' component={AddApplication}/>
+          <Route path='applications/add' component={Applications}/>
+          <Route path='applications/table' component={Table}/>
           <Route path='applications/update/:id' component={UpdateApplication}/>
         </Route>
         <Route path='inscription' component={Inscription}/>
