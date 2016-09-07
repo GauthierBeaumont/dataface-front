@@ -13,6 +13,7 @@ class Table extends Component {
 		return (
 		  <div className="Table">
 		  <h3>Créer une table</h3>
+
 				<form action="" method="POST">
 					<div className="input-field col m11">
 						<input id="table_name" name="table_name" type="text"/>
@@ -46,7 +47,14 @@ class Table extends Component {
 							</tbody>
 						</table>
 
+					<div className="col s6 left-align">
 					<button className="waves-effect waves-light btn-large z-depth-0 z-depth-1-hover">Enregistrer</button>
+					
+					</div>
+					<div className="col s6 right-align">
+					<a href="/#/dashboard/applications" className="waves-effect waves-light btn-large red"><i className="fa fa-arrow-left" aria-hidden="true"></i> Annuler</a>
+					
+					</div>					
 				</form>
 		   </div>
 		)
