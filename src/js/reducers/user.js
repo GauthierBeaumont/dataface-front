@@ -11,7 +11,10 @@ const user = (state = defaultState, { type, payload }) => {
       return { ...state, loading: true }
     case USER_LOGIN_SUCCESS:
       setCookie('dataface-user-id', payload.user.id, 7)
-      return { ...state, user: payload.user }
+      const user = payload.user
+      delete user.password
+      delete user.passord_confirmation
+      return { ...state, user }
     case USER_LOGIN_FAILED:
       return { ...state, error: payload }
     case USER_SET_USER:

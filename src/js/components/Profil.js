@@ -23,7 +23,7 @@ class Profil extends Component{
          firstname: props.user.firstname || "",
          lastname: props.user.lastname || "",
          email: props.user.email || "",
-         password: props.user.password || "",
+         password: "",
          country: props.user.country || "",
          postal_code: props.user.postal_code || "",
          phone: props.user.phone || "",
@@ -85,13 +85,13 @@ class Profil extends Component{
                            { phone ? <ErrorMessage message={phone}/> : <noscript/> }
                            <div className="input-field col m12">
                               <i className="fa fa-phone prefix"></i>
-                              <input id="phone" type="text"  value={ this.state.phone } onChange={(e) => this.setState({phone: e.target.value})}/>
+                              <input id="phone" name="phone" type="number"  value={ this.state.phone } onChange={(e) => this.setState({phone: e.target.value})}/>
                               <label htmlFor="phone" className="">Téléphone</label>
                            </div>
                            { password ? <ErrorMessage message={password}/> : <noscript/> }
                            <div className="input-field col m12">
                               <i className="fa fa-unlock-alt prefix"></i>
-                              <input id="password" type="text"  value={ this.state.password } onChange={(e) => this.setState({password: e.target.value})}/>
+                              <input id="password" type="password"  value={ this.state.password } onChange={(e) => this.setState({password: e.target.value})}/>
                               <label htmlFor="password" className="">Mot de passe</label>
                            </div>
 
@@ -149,10 +149,7 @@ class Profil extends Component{
          errors.phone = 'Veuillez saisir un téléphone correct'
          hasError = true
       }
-      if (!password) {
-         errors.password = 'Veuillez saisir un mot de passe correct'
-         hasError = true
-      }else if (password.length < 6) {
+      if (password && password.length < 6) {
          errors.password = 'Veuillez saisir mot de passe d\'au moins 6 caracteres'
          hasError = true
       }
@@ -165,8 +162,7 @@ class Profil extends Component{
    }
 
    deleteProfile(e){
-      e.preventDefault();
-
+      e.preventDefault()
       const c = confirm("Voulez vous vraiment supprimer votre compte ? Cette action est irréverssible.")
       if (c) this.props.deleteAccount()
    }

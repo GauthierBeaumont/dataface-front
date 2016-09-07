@@ -2,7 +2,7 @@ import { apiURL } from './config'
 import $ from 'jquery'
 import { getCookie } from '../utils/cookie'
 
-const _token = getCookie('_token')
+const _token = getCookie('dataface-token')
 
 export const getURL = (url) => {
   return new Promise((resolve, reject) => {
@@ -23,16 +23,19 @@ export const getURL = (url) => {
 export const postURL = (url, data) => {
   return new Promise((resolve, reject) => {
     $.ajax({
-         url : `${apiURL}/${url}`,
-         type : 'POST',
-         dataType : 'json',
-         data: data,
-         success : (data, status, xhr) => {
+          url : `${apiURL}/${url}`,
+          type : 'POST',
+          dataType : 'json',
+          data: data,
+          beforeSend: (xhr) => {
+              xhr.setRequestHeader('X-CSRF-Token', _token)
+            },
+          success : (data, status, xhr) => {
             resolve(data, xhr.status)
-         },
-         error : (xhr, status, error) => {
+          },
+          error : (xhr, status, error) => {
             reject(error, xhr.status)
-         }
+          }
       });
   })
 }
@@ -44,7 +47,9 @@ export const putURL = (url, data) => {
          type : 'PUT',
          dataType : 'json',
          data: data,
-         headers: { 'X-XSRF-TOKEN' : _token },
+         beforeSend: (xhr) => {
+            xhr.setRequestHeader('X-CSRF-Token', _token)
+          },
          success : (data, status, xhr) => {
             resolve(data, xhr.status)
          },
@@ -62,7 +67,9 @@ export const deleteURL = (url, data) => {
          type : 'DELETE',
          dataType : 'json',
          data: data,
-         headers: { 'X-XSRF-TOKEN' : _token },
+         beforeSend: (xhr) => {
+            xhr.setRequestHeader('X-CSRF-Token', _token)
+          },
          success : (data, status, xhr) => {
             resolve(data, xhr.status)
          },

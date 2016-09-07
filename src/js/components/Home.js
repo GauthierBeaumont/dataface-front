@@ -18,7 +18,7 @@ class Home extends Component{
     return (
       <div className="Home">
       	<header className="Home_header">
-      		<img src="dist/images/home/logo-dataface-blanc.png" className="Logo"/>
+      		<a href="#"><img src="dist/images/home/logo-dataface-blanc.png" className="Logo"/></a>
       		<div className="Nav">
       			<a className="btn" href="#">Produit</a>
       			<a className="btn" href="#">Essai gratuit</a>
@@ -50,8 +50,8 @@ class Home extends Component{
           </div>
         </div>
         <div className="Home_footer">
-          <a className="Home_footer_link" href="#">Mentions légales</a>
-          <a className="Home_footer_link" href="#">Confidentialité</a>
+      <a className="Home_footer_link" href="/#/mentions-legales">Mentions légales</a>
+      <a className="Home_footer_link" href="/#/confidentialite">Confidentialité</a>
         </div>
       </div>
     )

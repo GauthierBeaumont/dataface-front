@@ -117,6 +117,10 @@ class Inscription extends Component{
       )
    }
 
+   componentWillReceiveProps(nextProps) {
+      if (nextProps.user && !this.props.user) this.context.router.push('/dashboard')
+   }
+
    submit(e){
       e.preventDefault()
       let errors = { ...defaultErrorState }
@@ -183,6 +187,10 @@ class Inscription extends Component{
          this.props.register({firstName, lastName, address, country, postalCode, phone, email, password, password_confirmation})
       }
    }
+}
+
+Inscription.contextTypes = {
+  router: React.PropTypes.object
 }
 
 export default Inscription

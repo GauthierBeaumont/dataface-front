@@ -1,32 +1,29 @@
 import { call, put } from 'redux-saga/effects'
 import { takeEvery } from 'redux-saga'
-import { USER_REGISTER, USER_REGISTER_SUCCESS, USER_REGISTER_FAILED, USER_LOGIN_SUCCESS } from '../actions'
-import { userRegisterApi } from '../api/inscription'
+import { ABONNEMENT_REGISTER, ABONNEMENT_REGISTER_SUCCEESS, ABONNEMENT_REGISTER_FAILED } from '../actions'
+import { registerAbonnementApi } from '../api/inscription'
 
-export function* userRegister ({ payload: { user } }) {
+export function* registerAbonnement ({ payload: { user } }) {
   try {
-    const registerRequest = yield call(userRegisterApi, { user })
+    const registerRequest = yield call(registerAbonnementApi, { user })
     if (registerRequest.status === 'success') {
       yield put({ type: USER_REGISTER_SUCCESS })
       yield put({ type: USER_LOGIN_SUCCESS, payload: { user } })
     }
     else yield put({ type: USER_REGISTER_FAILED, payload: { error: registerRequest.error } })
   } catch (error) {
-    if (!error) {
-      yield put({ type: USER_REGISTER_SUCCESS })
-      yield put({ type: USER_LOGIN_SUCCESS, payload: { user } })
-    }
+    console.log(error)
     yield put({ type: USER_REGISTER_FAILED, payload: { error: 'Une erreur est surevenue, veuillez reesayer ultérieurement.' } })
   }
 }
 
-function* watchUserRegister () {
-  yield* takeEvery(USER_REGISTER, userRegister)
+function* watchAbonnementRegister () {
+  yield* takeEvery(ABONNEMENT_REGISTER, registerAbonnement)
 }
 
 function* flow () {
   yield [
-    watchUserRegister()
+    watchAbonnementRegister()
   ]
 }
 
