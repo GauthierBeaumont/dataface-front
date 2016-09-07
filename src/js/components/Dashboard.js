@@ -60,12 +60,15 @@ class Dashboard extends Component {
         <ul className="Dashboard_nav">
           <li className ="sideTitle">
             <i className="fa fa-user"/>
-            <span>{ isAdmin ? 'Administrateur' : 'Services' }</span>
+            <span className="Text">{ isAdmin ? 'Administrateur' : 'Services' }</span>
           </li>
           {
             nav.map((item, i) => (
               <li key={ i } className="Dashboard_nav_item">
-                <a className="waves-effect waves-light" href={ item.link }><i className={ `fa fa-${item.icon}` }></i> { item.name }</a>
+                <a className="waves-effect waves-light" href={ item.link }>
+                  <i className={ `fa fa-${item.icon}` }/>
+                  <span className="Text">{ item.name }</span>
+                </a>
               </li>
             ))
           }
