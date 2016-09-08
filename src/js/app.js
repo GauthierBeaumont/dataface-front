@@ -22,6 +22,7 @@ import Index from './components/Index'
 import Users from './components/Users'
 import FAQ from './components/FAQ'
 import AdminDocker from './components/AdminDocker'
+import Administration from './components/Administration'
 
 const App = ({ history }) => (
   <Router history={history}>
@@ -44,6 +45,7 @@ const App = ({ history }) => (
           <Route path='applications/:applicationId/table/:tableId' component={ListTable}/>
           <Route path='applications/:applicationId/update/' component={UpdateApplication}/>
           <Route path='docker' component={AdminDocker}/>
+          <Route path='administration' component={Administration}/>
         </Route>
         <Route path='inscription' component={Inscription}/>
         <Route path='profil' component={Profil}/>

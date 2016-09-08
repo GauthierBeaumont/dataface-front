@@ -81,5 +81,4 @@ const Dashboard = ({ logout, children, user: { role_id } }) => {
     </div>
   )
 }
-
 export default Dashboard
