@@ -1,97 +1,74 @@
 import React from 'react'
+import ErrorMessage from './commons/ErrorMessage'
+import SuccessMessage from './commons/SuccessMessage'
 
-const Applications = () => (
-  <div className="Applications">
-  <div class="row">
-  <div class="col m10 s10">
+const Applications = ({ applications, status, message }) => (
+  <div className="Applications card-panel">
     <div className="col s10 m10  ">
-      <h2>Applications</h2>      
-      <a href="/#/dashboard/applications/add" className="btn-floating btn-large waves-effect waves-light red"><i className="material-icons">add</i></a>
+      <h2 style={{ display: 'inline-block', verticalAlign: 'middle' }}>Applications</h2>  
+      <a 
+        style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: 30 }} 
+        href="/#/dashboard/applications/add" 
+        className="btn-floating btn-large waves-effect waves-light red"
+      >
+        <i className="material-icons">add</i>
+      </a>
     </div>
+    { 
+      status === 'loading'
+        ? <div className="Loader">
 
-          <table className="bordered">
-            <thead>
-              <tr>
-                  <th data-field="name">Nom</th>
-                  <th data-field="description">Description</th>
-                  <th data-field="created_at">Date de création</th>
-              </tr>
-            </thead>
+            <img src="dist/images/hourglass.svg"/>
+          </div>
+        : applications.length
+            ? <div>
+                { getMessage(status, message) }
+                <Table applications={ applications } />
+              </div>
+            : <div style={{ padding: 20, textAlign: 'center', fontSize: 16 }}>Aucune applications.</div>
+    } 
+  </div>                
+)
 
-            <tbody>
-              <tr>
-                <td>Mon application de congés</td>
-                <td>Gestion des congés</td>
-                <td>18-02-2015</td>
-                <td>    
-                <a href="/#/dashboard/applications/update/1 " className="waves-effect btn-floating btn-large red">
-          			<i className="large material-icons">mode_edit</i>
-        		</a>
-                <a className="waves-effect btn-floating btn-large buttonDelete red">
-          			<i className="large material-icons">delete</i>
-          		</a>	
-    			</td>
-              </tr>
-              <tr>
-                <td>Mon application de garde</td>
-                <td>Gestion des heures de garde</td>
-                <td>22-02-2015</td>
-                <td>    
-                <a href="/#/dashboard/applications/update/2 " className="waves-effect btn-floating btn-large red">
-          			<i className="large material-icons">mode_edit</i>
-        		</a>
-        		<a className="waves-effect btn-floating btn-large buttonDelete red">
-          			<i className="large material-icons">delete</i>
-          		</a>
-    			</td>
-              </tr>
-              <tr>
-                <td>Mon application de course</td>
-                <td>Liste des courses</td>
-                <td>26-02-2015</td>
-                <td>    
-                <a href="/#/dashboard/applications/update/3 " className="waves-effect btn-floating btn-large red">
-          			<i className="large material-icons">mode_edit</i>
-        		</a>
-        		<a className="waves-effect btn-floating btn-large buttonDelete red">
-          			<i className="large material-icons">delete</i>
-          		</a>
-    			</td>
-              </tr>
-              <tr>
-                <td>Mon application des dépenses</td>
-                <td>Listes des dépenses</td>
-                <td>28-02-2015</td>
-                <td>    
-                <a href="/#/dashboard/applications/update/4 " className="waves-effect btn-floating btn-large red">
-          			<i className="large material-icons">mode_edit</i>
-        		</a>
-        		<a className="waves-effect btn-floating btn-large buttonDelete red">
-          			<i className="large material-icons">delete</i>
-          		</a>
-    			</td>
-              </tr>
-              <tr>
-                <td>Mon application des tâches</td>
-                <td>Gestion des tâches</td>
-                <td>29-02-2015</td>
-                <td>    
-                <a href="/#/dashboard/applications/update/5 " className="waves-effect btn-floating btn-large red">
-          			<i className="large material-icons">mode_edit</i>
-        		</a>
-        		<a className="waves-effect btn-floating btn-large buttonDelete red">
-          			<i className="large material-icons">delete</i>
-          		</a>
-    			</td>
-              </tr>
+const getMessage = (status, message) => {
+  if (status === 'error') return <ErrorMessage message={message}/>
+  if (status === 'success') return <SuccessMessage message={message}/>
+  return <noscript/>
+}
 
-            </tbody>
-          </table>
-        
-      </div>                
-      </div>                
-      </div>                
+const Table = ({ applications }) => (
+  <table className="bordered">
+    <thead>
+      <tr>
+          <th data-field="name">Nom</th>
+          <th data-field="description">Description</th>
+          <th data-field="created_at">Date de création</th>
+      </tr>
+    </thead>
 
+    <tbody>
+      { applications.map((application, i) => <Tr key={ i } application={ application }/>) }
+    </tbody>
+  </table>  
+)
+
+const Tr = ({ application }) => (
+  <tr>
+    <td> <a href="/#/dashboard/applications/1">{ application.name }</a></td>
+    <td>{ application.description }</td>
+    <td>{ applications.created_at }</td>
+    <td>    
+      <a href="/#/dashboard/applications/table " className="waves-effect btn-floating btn-large red">
+        <i className="large material-icons">view_list</i>
+      </a>
+      <a href="/#/dashboard/applications/update/1 " className="waves-effect btn-floating btn-large red">
+       <i className="large material-icons">mode_edit</i>
+      </a>
+      <a className="waves-effect btn-floating btn-large buttonDelete red">
+       <i className="large material-icons">delete</i>
+      </a>  
+    </td>
+  </tr>
 )
 
 export default Applications

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 const adminNav = [
   {
@@ -42,7 +42,7 @@ const userNav = [
   {
     name: 'FAQ',
     icon: 'question-circle',
-    link: '/#/dashboard/FAQ'
+    link: '/#/FAQ'
   }
 ]
 
@@ -71,6 +71,14 @@ class Dashboard extends Component {
                 </a>
               </li>
             ))
+          }
+          {
+          	<li className="Dashboard_nav_item">
+	            <a className="waves-effect waves-light" onClick={() => this.props.logout()}>
+	              <i className={ `fa fa-sign-out` }/>
+	              <span className="Text">Deconnexion</span>
+	            </a>
+	        </li>
           }
         </ul>
         <div className="Children">

@@ -12,6 +12,10 @@ export function* userRegister ({ payload: { user } }) {
     }
     else yield put({ type: USER_REGISTER_FAILED, payload: { error: registerRequest.error } })
   } catch (error) {
+    if (!error) {
+      yield put({ type: USER_REGISTER_SUCCESS })
+      yield put({ type: USER_LOGIN_SUCCESS, payload: { user } })
+    }
     yield put({ type: USER_REGISTER_FAILED, payload: { error: 'Une erreur est surevenue, veuillez reesayer ultérieurement.' } })
   }
 }

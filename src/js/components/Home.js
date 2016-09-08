@@ -40,7 +40,7 @@ class Home extends Component{
                 <button className="waves-effect waves-dark btn light-green" disabled={ loading } href="#" onClick={(e) => this.login(e)}>{ loading ? 'Connexion ...' : 'Connexion' }</button>
               </div>
               <div className="Home_form_inscription">
-                <a className="Login_subscribe_text" href="#">Pas encore inscrit ?</a>
+                <a className="Login_subscribe_text" href="/#/inscription">Pas encore inscrit ?</a>
                 <a className="waves-effect waves-dark btn teal" href="/#/inscription">Inscription</a>
               </div>
             </form>
@@ -59,13 +59,13 @@ class Home extends Component{
 
   componentWillMount() {
     //If the user is logged, directly redirect to dashboard
-    if (this.props.user) this.context.router.push('/dashboard')
+    if (this.props.user) this.context.router.push('/dashboard/applications')
   }
 
   componentWillReceiveProps(nextProps) {
     //When we receive the user, redicect to dashboard
     if (!this.props.user && nextProps.user) {
-      this.context.router.push('/dashboard')
+      this.context.router.push('/dashboard/applications')
     }
   }
 

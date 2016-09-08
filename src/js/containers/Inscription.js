@@ -3,10 +3,12 @@ import { connect } from 'react-redux'
 import { USER_REGISTER } from '../actions'
 import Inscription from '../components/Inscription'
 import { getResgisterStatus, getResgisterError } from '../selectors/inscription'
+import { getUser } from '../selectors/user'
 
 const mapStateToProps = state => ({
   status: getResgisterStatus(state),
-  registerError: getResgisterError(state)
+  registerError: getResgisterError(state),
+  user: getUser(state)
 })
 
 const mapDispatchToProps = dispatch => ({

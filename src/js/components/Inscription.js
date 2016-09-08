@@ -66,7 +66,7 @@ class Inscription extends Component{
                                  </div>
                                  <div className="input-field col m5">
                                     <input id="country" name="country" type="text"/>
-                                    <label htmlFor="country" className="">Ville</label>
+                                    <label htmlFor="country" className="">Pays</label>
                                  </div>
                                  <div className="input-field col m2">
                                     <input id="postalCode" name="postalCode" type="text"/>
@@ -115,6 +115,10 @@ class Inscription extends Component{
             </div>
          </div>
       )
+   }
+
+   componentWillReceiveProps(nextProps) {
+      if (nextProps.user && !this.props.user) this.context.router.push('/dashboard')
    }
 
    submit(e){
@@ -183,6 +187,10 @@ class Inscription extends Component{
          this.props.register({firstName, lastName, address, country, postalCode, phone, email, password, password_confirmation})
       }
    }
+}
+
+Inscription.contextTypes = {
+  router: React.PropTypes.object
 }
 
 export default Inscription
