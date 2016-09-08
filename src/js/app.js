@@ -19,6 +19,7 @@ import Mentions from './components/Mentions'
 import Home from './containers/Home'
 import Test from './containers/test'
 import Index from './components/Index'
+import FAQ from './components/FAQ'
 
 const App = ({ history }) => (
   <Router history={history}>
@@ -40,6 +41,8 @@ const App = ({ history }) => (
           <Route path='applications/:applicationId/update/' component={UpdateApplication}/>
         </Route>
         <Route path='inscription' component={Inscription}/>
+        <Route path='profil' component={Profil}/>
+        <Route path='FAQ' component={FAQ}/>
       </Route>
     </Route>
   </Router>
