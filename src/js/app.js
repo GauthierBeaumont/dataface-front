@@ -35,9 +35,9 @@ const App = ({ history }) => (
           <Route path='profil' component={Profil}/>
           <Route path='applications' component={Applications}/>
           <Route path='applications/add' component={AddApplication}/>
-          <Route path='applications/table' component={Table}/>
-          <Route path='applications/table/:id' component={ListTable}/>
-          <Route path='applications/update/:id' component={UpdateApplication}/>
+          <Route path='applications/:applicationId/table' component={Table}/>
+          <Route path='applications/:applicationId/table/:tableId' component={ListTable}/>
+          <Route path='applications/:applicationId/update/' component={UpdateApplication}/>
         </Route>
         <Route path='inscription' component={Inscription}/>
       </Route>
