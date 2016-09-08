@@ -42,51 +42,44 @@ const userNav = [
   {
     name: 'FAQ',
     icon: 'question-circle',
-    link: '/#/FAQ'
+    link: '/#/dashboard/FAQ'
   }
 ]
 
-class Dashboard extends Component {
-  constructor(props) {
-      super(props)
-      this.state = { isAdmin: false }
-  }
-
-  render() {
-    const { isAdmin } = this.state
-    const nav = isAdmin ? adminNav : userNav
-    return (
-      <div className="Dashboard">
-        <ul className="Dashboard_nav">
-          <li className ="sideTitle">
-            <i className="fa fa-user"/>
-            <span className="Text">{ isAdmin ? 'Administrateur' : 'Services' }</span>
-          </li>
-          {
-            nav.map((item, i) => (
-              <li key={ i } className="Dashboard_nav_item">
-                <a className="waves-effect waves-light" href={ item.link }>
-                  <i className={ `fa fa-${item.icon}` }/>
-                  <span className="Text">{ item.name }</span>
-                </a>
-              </li>
-            ))
-          }
-          {
-          	<li className="Dashboard_nav_item">
-	            <a className="waves-effect waves-light" onClick={() => this.props.logout()}>
-	              <i className={ `fa fa-sign-out` }/>
-	              <span className="Text">Deconnexion</span>
-	            </a>
-	        </li>
-          }
-        </ul>
-        <div className="Children">
-          { this.props.children }
-        </div>
+const Dashboard = ({ logout, children, user: { role_id } }) => {
+  const isAdmin = role_id == 1
+  const nav = isAdmin ? adminNav : userNav
+  return (
+    <div className="Dashboard">
+      <ul className="Dashboard_nav">
+        <li className ="sideTitle">
+          <i className="fa fa-user"/>
+          <span className="Text">{ isAdmin ? 'Administrateur' : 'Services' }</span>
+        </li>
+        {
+          nav.map((item, i) => (
+            <li key={ i } className="Dashboard_nav_item">
+              <a className="waves-effect waves-light" href={ item.link }>
+                <i className={ `fa fa-${item.icon}` }/>
+                <span className="Text">{ item.name }</span>
+              </a>
+            </li>
+          ))
+        }
+        {
+        	<li className="Dashboard_nav_item">
+            <a className="waves-effect waves-light" onClick={() => logout()}>
+              <i className={ `fa fa-sign-out` }/>
+              <span className="Text">Deconnexion</span>
+            </a>
+        </li>
+        }
+      </ul>
+      <div className="Children">
+        { children }
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default Dashboard

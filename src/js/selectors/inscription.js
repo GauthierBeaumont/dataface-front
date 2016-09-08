@@ -1,2 +1,2 @@
 export const getResgisterStatus = state => state.inscription.status
-export const getResgisterError = state => state.inscription.error
+export const getResgisterMessage = state => state.inscription.message

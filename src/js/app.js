@@ -32,6 +32,7 @@ const App = ({ history }) => (
         <Route path='confidentialite' component={Confidentialite}/>
         <Route path='mentions-legales' component={Mentions}/>
         <Route path='dashboard' component={Dashboard}>
+          <Route path='FAQ' component={FAQ}/>
           <Route path='abonnements' component={Abonnements}/>
           <Route path='profil' component={Profil}/>
           <Route path='applications' component={Applications}/>
@@ -42,7 +43,6 @@ const App = ({ history }) => (
         </Route>
         <Route path='inscription' component={Inscription}/>
         <Route path='profil' component={Profil}/>
-        <Route path='FAQ' component={FAQ}/>
       </Route>
     </Route>
   </Router>

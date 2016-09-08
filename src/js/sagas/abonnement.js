@@ -1,7 +1,8 @@
 import { call, put } from 'redux-saga/effects'
 import { takeEvery } from 'redux-saga'
-import { ABONNEMENT_REGISTER, ABONNEMENT_REGISTER_SUCCEESS, ABONNEMENT_REGISTER_FAILED } from '../actions'
-import { registerAbonnementApi } from '../api/inscription'
+import { ABONNEMENT_REGISTER, ABONNEMENT_REGISTER_SUCCEESS, ABONNEMENT_REGISTER_FAILED,
+ ABONNEMENT_FETCH, ABONNEMENT_FETCH_SUCCESS, ABONNEMENT_FETCH_FAILED } from '../actions'
+import { registerAbonnementApi, abonnementFetchApi } from '../api/inscription'
 
 export function* registerAbonnement ({ payload: { user } }) {
   try {
@@ -16,13 +17,32 @@ export function* registerAbonnement ({ payload: { user } }) {
   }
 }
 
+export function* abonnementFetch ({ payload: { userId } }) {
+  try {
+    const fetchRequest = yield call(abonnementFetchApi, userId)
+    if (fetchRequest.status) {
+      yield put({ type: ABONNEMENT_FETCH_SUCCESS, payload: { abonnement: null } })
+    }
+    else yield put({ type: ABONNEMENT_FETCH_SUCCESS, payload: { abonnement: fetchRequest } })
+  } catch (error) {
+    console.log(error)
+    yield put({ type: ABONNEMENT_FETCH_FAILED, payload: { error: 'Une erreur est surevenue, veuillez reesayer ultérieurement.' } })
+  }
+}
+
 function* watchAbonnementRegister () {
   yield* takeEvery(ABONNEMENT_REGISTER, registerAbonnement)
 }
 
+function* watchAbonnementFetch () {
+  yield* takeEvery(ABONNEMENT_FETCH, abonnementFetch)
+}
+
+
 function* flow () {
   yield [
-    watchAbonnementRegister()
+    watchAbonnementRegister(),
+    watchAbonnementFetch()
   ]
 }
 

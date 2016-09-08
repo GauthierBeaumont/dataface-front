@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ErrorMessage from './commons/ErrorMessage'
+import SuccessMessage from './commons/SuccessMessage'
 import { validateEmail } from '../utils/email'
 
 const defaultErrorState = {
@@ -25,7 +26,7 @@ class Inscription extends Component{
 
    render() {
       const { firstName, lastName, address, country, postalCode, phone, email, password, password_confirmation, checkbox_terms } = this.state.errors
-      const { status, registerError } = this.props
+      const { status, message } = this.props
 
       return (
          <div className="Inscription">
@@ -44,7 +45,8 @@ class Inscription extends Component{
                            </div>
 
                            <div className="card-panel clearfix">
-                                 { registerError ? <ErrorMessage message={registerError}/> : <noscript/> }
+                                 { status === 'error' ? <ErrorMessage message={message}/> : <noscript/> }
+                                 { status === 'success' ? <SuccessMessage message={message}/> : <noscript/> }
                                  { lastName ? <ErrorMessage message={lastName}/> : <noscript/> }
                                  { firstName ? <ErrorMessage message={firstName}/> : <noscript/> }
                                  <div className="input-field col m6">
@@ -115,10 +117,6 @@ class Inscription extends Component{
             </div>
          </div>
       )
-   }
-
-   componentWillReceiveProps(nextProps) {
-      if (nextProps.user && !this.props.user) this.context.router.push('/dashboard')
    }
 
    submit(e){

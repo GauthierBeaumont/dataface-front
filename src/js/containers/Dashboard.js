@@ -12,7 +12,7 @@ class Dashboard extends Component {
   	const { user, children, ...props } = this.props
     if (!user) return <noscript/>
     return (
-      <DashboardComponent { ...props }>
+      <DashboardComponent { ...props } user={ user }>
         { children }
       </DashboardComponent>
     )

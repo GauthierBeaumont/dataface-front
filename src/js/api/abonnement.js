@@ -7,3 +7,7 @@ import { postURL, getURL } from './fetch'
 export const abonnementRegisterApi = (abonnementId, userId) => {
 	return postURL('abonnement', { abonnementId, userId })
 }
+
+export const abonnementFetchApi = userId => {
+	return getURL(`subscription-info/:userId`)
+}
