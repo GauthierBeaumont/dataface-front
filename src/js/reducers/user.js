@@ -16,14 +16,13 @@ const user = (state = defaultState, { type, payload }) => {
       delete user.passord_confirmation
       return { ...state, user }
     case USER_LOGIN_FAILED:
-      return { ...state, error: payload }
+      return { ...state, error: payload, loading: false }
     case USER_SET_USER:
       return { ...state, user: payload.user.profile }
     case USER_DELETE_FAILED:
     case USER_SAVE_PROFILE_FAILED:
       return { ...state, editStatus: { type: 'error', text: 'Une erreur est survenue merci de ressayer plutard.' } }
     case USER_SAVE_PROFILE_SUCCESS:
-      console.log({ ...state.user, ...payload.user })
       return { ...state, editStatus: { type: 'success', text: 'Votre profil a bien été modifié' }, user: { ...state.user, ...payload.user } }
     case USER_LOGOUT:
       removeCookie('dataface-user-id')

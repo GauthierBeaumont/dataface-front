@@ -1,84 +1,92 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+
+const adminNav = [
+  {
+    name: 'Gestion des utilisateurs',
+    icon: 'users',
+    link: '/#/dashboard/utilisateurs'
+  },
+  {
+    name: 'Données Docker',
+    icon: 'docker',
+    link: '/#/dashboard/docker'
+  },
+  {
+    name: 'Analytics',
+    icon: 'line-chart',
+    link: '/#/dashboard/analytics'
+  },
+  {
+    name: 'Administration du site',
+    icon: 'cog',
+    link: '/#/dashboard/administration'
+  }
+]
+
+const userNav = [
+  {
+    name: 'Profil',
+    icon: 'user',
+    link: '/#/dashboard/profil'
+  },
+  {
+    name: 'Gestion des abonnements',
+    icon: 'check-square',
+    link: '/#/dashboard/abonnements'
+  },
+  {
+    name: 'Gestion des applications',
+    icon: 'list-alt',
+    link: '/#/dashboard/applications'
+  },
+  {
+    name: 'FAQ',
+    icon: 'question-circle',
+    link: '/#/FAQ'
+  }
+]
 
 class Dashboard extends Component {
-    constructor(props) {
-        super(props)
-        this.state = { admin: false }
-    }
+  constructor(props) {
+      super(props)
+      this.state = { isAdmin: false }
+  }
 
-    render() {
-    	if (this.state.admin) {
-    		return (
-    			<div className="adminNav">
-	    			<div className="container-fluid">
-	    				<div className="row">
-								<ul id="slide-out" className ="col s4 m2 side-nav">
-									<li className ="sideTitle center">
-										<i className="fa fa-user"></i>
-												<span>ADMIN</span>
-									</li>
-									<li>
-										<div className="divider"></div>
-									</li>
-									<li>
-										<a className="waves-effect waves-light" href="/#/utilisateurs"><i className="fa fa-users"></i> Gestion des utilisateurs</a>
-								    </li>
-								    <li>
-								    	<a className="waves-effect waves-light" href="/#/docker"><i className="fa fa-docker"></i> Données Docker</a>
-								    </li>
-									<li>
-										<a className="waves-effect waves-light" href="/#/analytics"><i className="fa fa-line-chart"></i> Analytics</a>
-								    </li>
-								    <li>
-										<a className="waves-effect waves-light" href="/#/administration"><i className="fa fa-cog"></i> Administration du site</a>
-								    </li>
-								</ul>
-								 
-
-		    				<div className=" col s8 m8 offset-s1 offset-m1 children">{ this.props.children }</div>
-						</div>
-					</div>
-	
-				</div>
-
-    		)
-    	}
-
-        return (
-    			<div className="serviceNav">
-	    			<div className="container-fluid">
-	    				<div className="row">
-								<ul id="slide-out" className ="col s4 m2 side-nav">
-									<li className ="sideTitle center">
-										<i className="fa fa-user"></i>
-												<span>SERVICES</span>
-									</li>
-									<li>
-										<div className="divider"></div>
-									</li>
-								    <li>
-								    	<a className="waves-effect waves-light" href="/#/dashboard/profil"><i className="fa fa-user"></i> Profil</a>
-								    </li>
-									<li>
-										<a className="waves-effect waves-light" href="/#/abonnements"><i className="fa fa-check-square"></i> Gestion des abonnements</a>
-								    </li>
-								    <li>
-										<a className="waves-effect waves-light" href="/#/applications"><i className="fa fa-list-alt"></i> Gestion des applications</a>
-								    </li>
-									<li>
-										<a className="waves-effect waves-light" href="/#/FAQ"><i className="fa fa-question-circle"></i> FAQ</a>
-								    </li>
-								</ul>  
-
-		    				<div className=" col s8 m8 offset-s1 offset-m1  children">{ this.props.children }</div>
-						</div>
-					</div>
-    
-				</div>    
-
-		)
-
-    }
+  render() {
+    const { isAdmin } = this.state
+    const nav = isAdmin ? adminNav : userNav
+    return (
+      <div className="Dashboard">
+        <ul className="Dashboard_nav">
+          <li className ="sideTitle">
+            <i className="fa fa-user"/>
+            <span className="Text">{ isAdmin ? 'Administrateur' : 'Services' }</span>
+          </li>
+          {
+            nav.map((item, i) => (
+              <li key={ i } className="Dashboard_nav_item">
+                <a className="waves-effect waves-light" href={ item.link }>
+                  <i className={ `fa fa-${item.icon}` }/>
+                  <span className="Text">{ item.name }</span>
+                </a>
+              </li>
+            ))
+          }
+          {
+          	<li className="Dashboard_nav_item">
+	            <a className="waves-effect waves-light" onClick={() => this.props.logout()}>
+	              <i className={ `fa fa-sign-out` }/>
+	              <span className="Text">Deconnexion</span>
+	            </a>
+	        </li>
+          }
+        </ul>
+        <div className="Children">
+          { this.props.children }
+        </div>
+      </div>
+    )
+  }
 }
 
 export default Dashboard

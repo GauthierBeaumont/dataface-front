@@ -1,59 +1,62 @@
-.adminNav, .serviceNav{
+.Dashboard{
 
-	ul{
-	position: inherit;
-	margin-bottom: 0px !important;
-		.sideTitle{
-			font-size: 1em;
-			font-weight: bold;
-			padding: 10px;
-		}
-		li{
-			padding: 0px;
-			a{
-				width: 100%;
+	.Dashboard_nav, .Children{
+		display: inline-block;
+		vertical-align: top;
+		.borderBox;
+	}
+
+	.Dashboard_nav{
+		width: 250px;
+		border-right: 1px solid #E5E5E5;
+		margin: 0px;
+		height: 100%;
+		font-size: 16px;
+
+		.sideTitle, .Dashboard_nav_item{
+
+			i {
+				margin-right: 10px;
+				vertical-align: middle;
+			}
+
+			.Text{
+				vertical-align: middle;
 			}
 		}
 
-		.fa{
-			font-size: 1.5em;
-			margin-right: 10px;
+		.sideTitle{
+			padding: 20px;
+			border-bottom: 1px solid #E5E5E5;
+		}
+
+		.Dashboard_nav_item{
+			a {
+				padding: 10px 20px;
+			}
 		}
 	}
-	.children{
 
-	}
-	.container{
-
+	.Children{
+		width: calc(100% - 250px);
+		background-color: #F1F1F1;
 		height: 100%;
-	.card-panel{
-		  box-shadow: 0 0px 5px rgba(0,0,0,.26);
-		button{
-			margin-top: 25px;
-		}
-		[type="checkbox"] + label{
-			line-height: 14px;
-		}
-	}
-	h2{
-		margin: 0px;
-	}
-	.row .link{
-		a,strong{
-			vertical-align: middle;
-		}
-	}
-	
-	}
+		padding: 40px;
+		overflow-y: scroll;
+	}	
 }
-.children{
-	height: 100%;
-	.buttonDelete{
-		margin-left: 15px; 
-	}
+
+.buttonDelete{
+	margin-left: 15px; 
 }
+
 .Applications{
+
 	a{
 	color: #000;
 	}
+}
+
+.AddApplication{
+	padding: 10px 40px;
 }

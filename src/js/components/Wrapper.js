@@ -3,7 +3,7 @@ import React from 'react'
 const Wrapper = ({ children }) => (
   <div className="Wrapper">
 	<header className="header">
-  		<a href="#"><img src="dist/images/logo-dataface-noir.png" className="Logo"/></a>
+  		<a href="#"><img src="dist/images/logo-dataface-noir.png" className="Logo" style={{height: 50}}/></a>
   		<div className="Nav">
   			<a className="btn" href="#">Produit</a>
   			<a className="btn" href="#">Essai gratuit</a>
