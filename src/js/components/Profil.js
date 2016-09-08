@@ -78,7 +78,7 @@ class Profil extends Component{
                            { postal_code ? <ErrorMessage message={postal_code}/> : <noscript/> }
                            <div className="input-field col m12">
                               <i className="fa fa-home prefix"></i>
-                              <input id="postal_ code" placeholder="Code postal" type="text" value={ this.state.postal_code } onChange={(e) => this.setState({postal_code: e.target.value})}/>
+                              <input id="postal_code" placeholder="Code postal" type="text" value={ this.state.postal_code } onChange={(e) => this.setState({postal_code: e.target.value})}/>
                               
                            </div>
                            { phone ? <ErrorMessage message={phone}/> : <noscript/> }
