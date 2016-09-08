@@ -1,54 +1,74 @@
-.adminNav, .serviceNav{
+.Dashboard{
 
-	ul{
-	position: inherit;
-	margin-bottom: 0px !important;
-		.sideTitle{
-			font-size: 1em;
-			font-weight: bold;
-			padding: 10px;
-		}
-		li{
-			padding: 0px;
-			a{
-				width: 100%;
+	.Dashboard_nav, .Children{
+		display: inline-block;
+		vertical-align: top;
+		.borderBox;
+	}
+
+	.Dashboard_nav{
+		width: 250px;
+		margin: 0px;
+		height: 100%;
+		font-size: 16px;
+		//background-image: url('http://www.technocrazed.com/wp-content/uploads/2015/12/Designer-Wallpaper-Background-31.jpg');
+		//background-image: url('http://www.dream-wallpaper.com/free-wallpaper/art-wallpaper/simple-design-1-wallpaper/1920x1200/free-wallpaper-26.jpg');
+		//background-position: 0px -80px;
+		-moz-box-shadow: 2px 0px 5px 0px rgba(0, 0, 0, 0.4);
+		-webkit-box-shadow: 2px 0px 5px 0px rgba(0, 0, 0, 0.4);
+		-o-box-shadow: 2px 0px 5px 0px rgba(0, 0, 0, 0.4);
+		box-shadow: 2px 0px 5px 0px rgba(0, 0, 0, 0.4);
+		filter:progid:DXImageTransform.Microsoft.Shadow(color=rgba(0, 0, 0, 0.4), Direction=90, Strength=5);
+		position: relative;
+		background-color: #694f4f;
+
+		.sideTitle, .Dashboard_nav_item{
+
+			i {
+				margin-right: 10px;
+				vertical-align: middle;
+			}
+
+			.Text{
+				vertical-align: middle;
 			}
 		}
 
-		.fa{
-			font-size: 1.5em;
-			margin-right: 10px;
+		.sideTitle{
+			padding: 20px;
+			border-bottom: 1px solid #E5E5E5;
+			color: #FFF;
+		}
+
+		.Dashboard_nav_item{
+			a {
+				padding: 10px 20px;
+				color: #FFF;
+				width: 100%;
+			}
 		}
 	}
-	.children{
 
-	}
-	.container{
-
+	.Children{
+		width: calc(100% - 250px);
+		background-color: #F1F1F1;
 		height: 100%;
-	.card-panel{
-		  box-shadow: 0 0px 5px rgba(0,0,0,.26);
-		button{
-			margin-top: 25px;
-		}
-		[type="checkbox"] + label{
-			line-height: 14px;
-		}
-	}
-	h2{
-		margin: 0px;
-	}
-	.row .link{
-		a,strong{
-			vertical-align: middle;
-		}
-	}
-
+		padding: 40px;
+		overflow-y: scroll;
 	}
 }
-.children{
-	height: 100%;
-	.buttonDelete{
-		margin-left: 15px;
+
+.buttonDelete{
+	margin-left: 15px;
+}
+
+.Applications{
+
+	a{
+	color: #000;
 	}
+}
+
+.AddApplication{
+	padding: 10px 40px;
 }

@@ -2,7 +2,7 @@ import { apiURL } from './config'
 import $ from 'jquery'
 import { getCookie } from '../utils/cookie'
 
-const _token = getCookie('_token')
+const _token = getCookie('dataface-token')
 
 export const getURL = (url) => {
   return new Promise((resolve, reject) => {
@@ -10,11 +10,11 @@ export const getURL = (url) => {
          url : `${apiURL}/${url}`,
          type : 'GET',
          dataType : 'json',
-         success : (data, statut) => {
-            resolve(data)
+         success : (data, status, xhr) => {
+            resolve(data, xhr.status)
          },
-         error : (result, statut, error) => {
-            reject(error)
+         error : (xhr, status, error) => {
+            reject(error, xhr.status)
          }
       });
   })
@@ -23,16 +23,19 @@ export const getURL = (url) => {
 export const postURL = (url, data) => {
   return new Promise((resolve, reject) => {
     $.ajax({
-         url : `${apiURL}/${url}`,
-         type : 'POST',
-         dataType : 'json',
-         data: data,
-         success : (data, statut) => {
-            resolve(data)
-         },
-         error : (result, statut, error) => {
-            reject(error)
-         }
+          url : `${apiURL}/${url}`,
+          type : 'POST',
+          dataType : 'json',
+          data: data,
+          beforeSend: (xhr) => {
+              xhr.setRequestHeader('X-CSRF-Token', _token)
+            },
+          success : (data, status, xhr) => {
+            resolve(data, xhr.status)
+          },
+          error : (xhr, status, error) => {
+            reject(error, xhr.status)
+          }
       });
   })
 }
@@ -44,12 +47,14 @@ export const putURL = (url, data) => {
          type : 'PUT',
          dataType : 'json',
          data: data,
-         headers: { 'X-XSRF-TOKEN' : _token },
-         success : (data, statut) => {
-            resolve(data)
+         beforeSend: (xhr) => {
+            xhr.setRequestHeader('X-CSRF-Token', _token)
+          },
+         success : (data, status, xhr) => {
+            resolve(data, xhr.status)
          },
-         error : (result, statut, error) => {
-            reject(error)
+         error : (xhr, status, error) => {
+            reject(error, xhr.status)
          }
       });
   })
@@ -62,12 +67,14 @@ export const deleteURL = (url, data) => {
          type : 'DELETE',
          dataType : 'json',
          data: data,
-         headers: { 'X-XSRF-TOKEN' : _token },
-         success : (data, statut) => {
-            resolve(data)
+         beforeSend: (xhr) => {
+            xhr.setRequestHeader('X-CSRF-Token', _token)
+          },
+         success : (data, status, xhr) => {
+            resolve(data, xhr.status)
          },
-         error : (result, statut, error) => {
-            reject(error)
+         error : (xhr, status, error) => {
+            reject(error, xhr.status)
          }
       });
   })

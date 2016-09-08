@@ -7,33 +7,47 @@
 @import "./inscription";
 @import "./produit";
 @import "./users";
+@import "./legales";
+@import "./profil";
+@import "./FAQ";
+@import "./abonnement";
 
 html, body, .Wrapper{
 	height: 100%;
 	width: 100%;
+  font-family: 'Lato', sans-serif;
 }
 
 * {-moz-box-sizing: border-box; box-sizing: border-box;}
 
 .header{
     padding: 15px 45px;
-    border-bottom: 1px solid #ebebeb;
+    //background-image: url('http://www.lirent.net/wp-content/uploads/2014/10/Android-Lollipop-Material-Design-Wallpaper-5.jpg');
+    //background-image: url('http://www.dream-wallpaper.com/free-wallpaper/art-wallpaper/simple-design-1-wallpaper/1920x1200/free-wallpaper-26.jpg');
+    background-image: url('../images/home/dawn-nature-sunset-trees.jpg');
+    background-position: 50%;
+    position: relative;
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.4);
+    -o-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.4);
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=rgba(0, 0, 0, 0.4), Direction=180, Strength=5);
 
     .Logo, .Nav{
       display: inline-block;
       vertical-align: middle;
     }
 	.Nav{
-	      width: calc(100% - 313px); //313px is the logo's width
+	      width: calc(100% - 209px);
 	      text-align: right;
 
 	      .btn{
 	        text-transform: initial;
 	        background-color: transparent;
-	        border: 1px solid #000;
+	        border: 1px solid #FFF;
 	        margin-right: 20px;
 	        font-size: 14px;
-	        color: #000;
+	        color: #FFF;
 
 	        &:hover{
 	          background-color: rgba(255, 255, 255, 0.3);
@@ -49,18 +63,26 @@ html, body, .Wrapper{
 }
 .footer{
 	width: 100%;
-	border-top: 1px solid #ebebeb;
-    height: 110px;
-    padding: 30px;
-  	position: absolute;
-    background-color: white;
-    margin-top: 16px;
-    .borderBox;
+  //background-image: url('http://www.technocrazed.com/wp-content/uploads/2015/12/Designer-Wallpaper-Background-31.jpg');
+  //background-image: url('http://www.dream-wallpaper.com/free-wallpaper/art-wallpaper/simple-design-1-wallpaper/1920x1200/free-wallpaper-26.jpg');
+  background-image: url('../images/home/dawn-nature-sunset-trees.jpg');
+  background-position: 0px 100%;
+  padding: 30px;
+	position: absolute;
+  .borderBox;
 
-    .footer_link{
-      margin-right: 20px;
-      color: #000;
-      font-size: 16px;
-      text-decoration: underline;
-    }
+  .footer_link{
+    margin-right: 20px;
+    font-size: 16px;
+    color: #FFF;
+    text-decoration: underline;
+  }
  }
+
+.Loader{
+
+	img{
+		display: block;
+		margin: auto;
+	}
+}
