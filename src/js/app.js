@@ -6,7 +6,6 @@ import Wrapper from './components/Wrapper'
 import Dashboard from './containers/Dashboard'
 import Connexion from './components/Connexion'
 import Inscription from './containers/Inscription'
-import Abonnements from './components/Abonnements'
 import Profil from './containers/Profil'
 import Applications from './containers/Applications'
 import AddApplication from './containers/AddApplication'
@@ -18,6 +17,7 @@ import Confidentialite from './components/Confidentialite'
 import Mentions from './components/Mentions'
 import Home from './containers/Home'
 import Test from './containers/test'
+import Abonnement from './components/Abonnement'
 import Index from './components/Index'
 import FAQ from './components/FAQ'
 
@@ -33,7 +33,7 @@ const App = ({ history }) => (
         <Route path='mentions-legales' component={Mentions}/>
         <Route path='dashboard' component={Dashboard}>
           <Route path='FAQ' component={FAQ}/>
-          <Route path='abonnements' component={Abonnements}/>
+          <Route path='abonnement' component={Abonnement}/>
           <Route path='profil' component={Profil}/>
           <Route path='applications' component={Applications}/>
           <Route path='applications/add' component={AddApplication}/>
