@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Wisiwig from 'react-wysiwyg-editor'
+//import Wisiwig from 'react-wysiwyg-editor'
+import Wisiwig from './commons/wysiwyg'
 import ListesAbonnements from './ListAbonnement'
 
 import $ from 'jquery'
@@ -149,9 +150,11 @@ class Administration extends Component{
                         <div className="col s10 m10 l10 center-align">
                            <h2>Confidentialité</h2>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group confidentialite">
                            <label>Confidentialité:</label>
-                           <Wisiwig style={editorStyle} content={this.state.confidentialite} onChange={this.handleContentChange} />
+                      
+
+                           <Wisiwig className="Wisiwig btn-group" style={editorStyle} content={this.state.confidentialite} onChange={this.handleContentChange} />
                         </div>
                      </div>
                   </div>
@@ -161,7 +164,7 @@ class Administration extends Component{
                            <h2>Mentions Légales</h2>
                         </div>
                      </div>
-                     <div className="form-group">
+                     <div className="form-group ml">
                         <label>Mentions Légales:</label>
                         <Wisiwig style={editorStyle} content={this.state.MentionsLegales} onChange={this.handleMentionsLegalesContentChange} />
                      </div>
