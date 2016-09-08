@@ -10,7 +10,7 @@ class Home extends Component{
     this.state = { internError: '' }
     context.router
   }
-  
+
   render () {
     const { loading, error } = this.props
     const { internError } = this.state
@@ -18,7 +18,7 @@ class Home extends Component{
     return (
       <div className="Home">
       	<header className="Home_header">
-      		<img src="dist/images/home/logo-dataface-blanc.png" className="Logo"/>
+      		<a href="#"><img src="dist/images/home/logo-dataface-blanc.png" className="Logo"/></a>
       		<div className="Nav">
       			<a className="btn" href="#">Produit</a>
       			<a className="btn" href="#">Essai gratuit</a>
@@ -37,21 +37,21 @@ class Home extends Component{
                 }
                 <Input type="text" id="Login_email" label="E-mail" className="Login_email"/>
                 <Input type="password" id="Login_password" label="Mot de passe" className="Login_password"/>
-                <button className="waves-effect waves-dark btn indigo" disabled={ loading } href="#" onClick={(e) => this.login(e)}>{ loading ? 'Connexion ...' : 'Connexion' }</button>
+                <button className="waves-effect waves-dark btn light-green" disabled={ loading } href="#" onClick={(e) => this.login(e)}>{ loading ? 'Connexion ...' : 'Connexion' }</button>
               </div>
               <div className="Home_form_inscription">
-                <a className="Login_subscribe_text" href="#">Pas encore inscrit ?</a>
-                <a className="waves-effect waves-dark btn green" href="/#/inscription">Inscription</a>
+                <a className="Login_subscribe_text" href="/#/inscription">Pas encore inscrit ?</a>
+                <a className="waves-effect waves-dark btn teal" href="/#/inscription">Inscription</a>
               </div>
             </form>
             <p className="Home_body_text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </div>
         </div>
         <div className="Home_footer">
-          <a className="Home_footer_link" href="#">Mentions légales</a>
-          <a className="Home_footer_link" href="#">Confidentialité</a>
+      <a className="Home_footer_link" href="/#/mentions-legales">Mentions légales</a>
+      <a className="Home_footer_link" href="/#/confidentialite">Confidentialité</a>
         </div>
       </div>
     )
@@ -59,13 +59,13 @@ class Home extends Component{
 
   componentWillMount() {
     //If the user is logged, directly redirect to dashboard
-    if (this.props.user) this.context.router.push('/dashboard')
+    if (this.props.user) this.context.router.push('/dashboard/applications')
   }
 
   componentWillReceiveProps(nextProps) {
     //When we receive the user, redicect to dashboard
     if (!this.props.user && nextProps.user) {
-      this.context.router.push('/dashboard')
+      this.context.router.push('/dashboard/applications')
     }
   }
 

@@ -1,0 +1,1 @@
+export const getAbonnement = state => state.abonnement.abonnement

@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { GET_TOKEN } from '../../actions'
 import { getCookie } from '../../utils/cookie'
- 
-class QueryUser extends Component {
+
+class QueryToken extends Component {
   render () {
     return <noscript/>
   }
@@ -29,4 +29,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(QueryUser)
+)(QueryToken)

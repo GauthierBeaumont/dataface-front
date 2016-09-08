@@ -1,0 +1,62 @@
+.Dashboard{
+
+	.Dashboard_nav, .Children{
+		display: inline-block;
+		vertical-align: top;
+		.borderBox;
+	}
+
+	.Dashboard_nav{
+		width: 250px;
+		border-right: 1px solid #E5E5E5;
+		margin: 0px;
+		height: 100%;
+		font-size: 16px;
+
+		.sideTitle, .Dashboard_nav_item{
+
+			i {
+				margin-right: 10px;
+				vertical-align: middle;
+			}
+
+			.Text{
+				vertical-align: middle;
+			}
+		}
+
+		.sideTitle{
+			padding: 20px;
+			border-bottom: 1px solid #E5E5E5;
+		}
+
+		.Dashboard_nav_item{
+			a {
+				padding: 10px 20px;
+			}
+		}
+	}
+
+	.Children{
+		width: calc(100% - 250px);
+		background-color: #F1F1F1;
+		height: 100%;
+		padding: 40px;
+		overflow-y: scroll;
+	}	
+}
+
+.buttonDelete{
+	margin-left: 15px; 
+}
+
+.Applications{
+
+	a{
+	color: #000;
+	}
+}
+
+.AddApplication{
+	padding: 10px 40px;
+}
