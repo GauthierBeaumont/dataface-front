@@ -36,7 +36,6 @@ class Profil extends Component{
       const { firstname, lastname, address, country, postal_code, phone, email, password, password_confirmation, checkbox_terms } = this.state.errors
       return (
          <div className="Profil">
-          <div className="container">
             <div className="content">
                <div className="row">
 
@@ -58,46 +57,46 @@ class Profil extends Component{
                            { firstname ? <ErrorMessage message={firstname}/> : <noscript/> }
                            <div className="input-field col m6">
                               <i className="fa fa-user prefix"></i>
-                              <input id="lastname" type="text" value={ this.state.lastname } onChange={(e) => this.setState({lastname: e.target.value})}/>
-                              <label htmlFor="lastname" className="">Nom</label>
+                              <input id="lastname" placeholder="Nom" type="text" value={ this.state.lastname } onChange={(e) => this.setState({lastname: e.target.value})}/>
+                              
                            </div>
                            <div className="input-field col m6">
-                              <input id="firstname" type="text"  value={ this.state.firstname } onChange={(e) => this.setState({firstname: e.target.value})}/>
-                              <label htmlFor="firstname" className="">Prenom</label>
+                              <input id="firstname" placeholder="Prenom" type="text"  value={ this.state.firstname } onChange={(e) => this.setState({firstname: e.target.value})}/>
+                              
                            </div>
                            { address ? <ErrorMessage message={address}/> : <noscript/> }
                            { country ? <ErrorMessage message={country}/> : <noscript/> }
                            <div className="input-field col m6">
                               <i className="fa fa-usre prefix"></i>
-                              <input id="address" type="text"  value={ this.state.address } onChange={(e) => this.setState({address: e.target.value})}/>
-                              <label htmlFor="address" className="">Adresse</label>
+                              <input id="address" placeholder="Adresse" type="text"  value={ this.state.address } onChange={(e) => this.setState({address: e.target.value})}/>
+                              
                            </div>
                            <div className="input-field col m6">
-                              <input id="country" type="text"  value={ this.state.country } onChange={(e) => this.setState({country: e.target.value})}/>
-                              <label htmlFor="country" className="">Pays</label>
+                              <input id="country" placeholder="Ville" type="text"  value={ this.state.country } onChange={(e) => this.setState({country: e.target.value})}/>
+                              
                            </div>
                            { postal_code ? <ErrorMessage message={postal_code}/> : <noscript/> }
                            <div className="input-field col m12">
                               <i className="fa fa-home prefix"></i>
-                              <input id="postal_code" type="text" value={ this.state.postal_code } onChange={(e) => this.setState({postal_code: e.target.value})}/>
-                              <label htmlFor="postal_code" className="">Code postal</label>
+                              <input id="postal_ code" placeholder="Code postal" type="text" value={ this.state.postal_code } onChange={(e) => this.setState({postal_code: e.target.value})}/>
+                              
                            </div>
                            { phone ? <ErrorMessage message={phone}/> : <noscript/> }
                            <div className="input-field col m12">
                               <i className="fa fa-phone prefix"></i>
-                              <input id="phone" name="phone" type="tel"  value={ this.state.phone } onChange={(e) => this.setState({phone: e.target.value})}/>
-                              <label htmlFor="phone" className="">Téléphone</label>
+                              <input id="phone" placeholder="Téléphone" name="phone" type="tel"  value={ this.state.phone } onChange={(e) => this.setState({phone: e.target.value})}/>
+                              
                            </div>
                            { password ? <ErrorMessage message={password}/> : <noscript/> }
                            <div className="input-field col m12">
                               <i className="fa fa-unlock-alt prefix"></i>
-                              <input id="password" type="password"  value={ this.state.password } onChange={(e) => this.setState({password: e.target.value})}/>
-                              <label htmlFor="password" className="">Mot de passe</label>
+                              <input id="password" placeholder="Mot de passe" type="password"  value={ this.state.password } onChange={(e) => this.setState({password: e.target.value})}/>
+                              
                            </div>
 
                            <div className="row">
                               <div className="col m12 center-align">
-                                 <a className="btn" onClick={(e) => this.updateProfile(e)} style={{marginBottom: 10}}>Sauvegarder</a>
+                                 <a className="btn" onClick={(e) => this.updateProfile(e)} style={{marginRight: 10}}>Sauvegarder</a>
                                  <a className="btn red" onClick={(e) => this.deleteProfile(e)}>Supprimer mon compte</a>
                               </div>
                            </div>
@@ -107,7 +106,6 @@ class Profil extends Component{
 
                </div>
             </div>
-         </div>
         </div>
       )
    }

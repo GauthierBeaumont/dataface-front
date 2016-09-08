@@ -7,13 +7,12 @@ export function* registerAbonnement ({ payload: { user } }) {
   try {
     const registerRequest = yield call(registerAbonnementApi, { user })
     if (registerRequest.status === 'success') {
-      yield put({ type: USER_REGISTER_SUCCESS })
-      yield put({ type: USER_LOGIN_SUCCESS, payload: { user } })
+      yield put({ type: ABONNEMENT_REGISTER_SUCCEESS, payload: { user } })
     }
-    else yield put({ type: USER_REGISTER_FAILED, payload: { error: registerRequest.error } })
+    else yield put({ type: ABONNEMENT_REGISTER_FAILED, payload: { error: registerRequest.error } })
   } catch (error) {
     console.log(error)
-    yield put({ type: USER_REGISTER_FAILED, payload: { error: 'Une erreur est surevenue, veuillez reesayer ultérieurement.' } })
+    yield put({ type: ABONNEMENT_REGISTER_FAILED, payload: { error: 'Une erreur est surevenue, veuillez reesayer ultérieurement.' } })
   }
 }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Home from '../components/Home'
+import { USER_LOGOUT } from '../actions'
 import DashboardComponent from '../components/Dashboard'
 
 import { getUser } from '../selectors/user'
@@ -34,4 +35,8 @@ const mapStateToProps = state => ({
   user: getUser(state)
 })
 
-export default connect(mapStateToProps)(Dashboard)
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch({ type: USER_LOGOUT })
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
