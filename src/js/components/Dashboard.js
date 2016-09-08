@@ -32,7 +32,7 @@ const userNav = [
   {
     name: 'Gestion des abonnements',
     icon: 'check-square',
-    link: '/#/dashboard/abonnements'
+    link: '/#/dashboard/abonnement'
   },
   {
     name: 'Gestion des applications',

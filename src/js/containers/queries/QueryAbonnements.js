@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { ABONNEMENT_FETCH } from '../../actions'
+import { ABONNEMENTS_FETCH } from '../../actions'
 
-class QueryAbonnement extends Component {
+class QueryAbonnements extends Component {
   render () {
     return <noscript/>
   }
@@ -14,16 +14,16 @@ class QueryAbonnement extends Component {
 
   /******************************** CUSTOM METHODS ********************************/
   request (props) {
-    const { fetchAbonnement } = props
-    fetchAbonnement()
+    const { fetchAbonnements } = props
+    fetchAbonnements()
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  fetchAbonnement: () => dispatch({ type: ABONNEMENT_FETCH })
+  fetchAbonnements: () => dispatch({ type: ABONNEMENTS_FETCH, })
 })
 
 export default connect(
   null,
   mapDispatchToProps
-)(QueryAbonnement)
+)(QueryAbonnements)

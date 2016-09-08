@@ -17,7 +17,7 @@ import Confidentialite from './components/Confidentialite'
 import Mentions from './components/Mentions'
 import Home from './containers/Home'
 import Test from './containers/test'
-import Abonnement from './components/Abonnement'
+import Abonnement from './containers/Abonnement'
 import Index from './components/Index'
 import FAQ from './components/FAQ'
 
