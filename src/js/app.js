@@ -19,8 +19,10 @@ import Home from './containers/Home'
 import Test from './containers/test'
 import Abonnement from './containers/Abonnement'
 import Index from './components/Index'
+import Users from './components/Users'
 import FAQ from './components/FAQ'
 import AdminDocker from './components/AdminDocker'
+import Administration from './components/Administration'
 
 const App = ({ history }) => (
   <Router history={history}>
@@ -37,11 +39,13 @@ const App = ({ history }) => (
           <Route path='abonnement' component={Abonnement}/>
           <Route path='profil' component={Profil}/>
           <Route path='applications' component={Applications}/>
+          <Route path='utilisateurs' component={Users}/>
           <Route path='applications/add' component={AddApplication}/>
           <Route path='applications/:applicationId/table' component={Table}/>
           <Route path='applications/:applicationId/table/:tableId' component={ListTable}/>
           <Route path='applications/:applicationId/update/' component={UpdateApplication}/>
           <Route path='docker' component={AdminDocker}/>
+          <Route path='administration' component={Administration}/>
         </Route>
         <Route path='inscription' component={Inscription}/>
         <Route path='profil' component={Profil}/>
