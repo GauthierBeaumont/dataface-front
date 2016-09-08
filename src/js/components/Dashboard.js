@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Dashboard extends Component {
     constructor(props) {
         super(props)
-        this.state = { admin: true }
+        this.state = { admin: false }
     }
 
     render() {
@@ -57,7 +57,7 @@ class Dashboard extends Component {
 										<div className="divider"></div>
 									</li>
 								    <li>
-								    	<a className="waves-effect waves-light" href="/#/profil"><i className="fa fa-user"></i> Profil</a>
+								    	<a className="waves-effect waves-light" href="/#/dashboard/profil"><i className="fa fa-user"></i> Profil</a>
 								    </li>
 									<li>
 										<a className="waves-effect waves-light" href="/#/abonnements"><i className="fa fa-check-square"></i> Gestion des abonnements</a>

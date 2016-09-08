@@ -66,7 +66,7 @@ class Inscription extends Component{
                                  </div>
                                  <div className="input-field col m5">
                                     <input id="country" name="country" type="text"/>
-                                    <label htmlFor="country" className="">Ville</label>
+                                    <label htmlFor="country" className="">Pays</label>
                                  </div>
                                  <div className="input-field col m2">
                                     <input id="postalCode" name="postalCode" type="text"/>

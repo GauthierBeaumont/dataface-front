@@ -3,7 +3,7 @@ import { Router, Route, IndexRoute } from 'react-router'
 
 //Components
 import Wrapper from './components/Wrapper'
-import Dashboard from './components/Dashboard'
+import Dashboard from './containers/Dashboard'
 import Connexion from './components/Connexion'
 import Inscription from './containers/Inscription'
 import Abonnements from './components/Abonnements'
