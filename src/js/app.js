@@ -20,6 +20,7 @@ import Test from './containers/test'
 import Abonnement from './containers/Abonnement'
 import Index from './components/Index'
 import FAQ from './components/FAQ'
+import AdminDocker from './components/AdminDocker'
 
 const App = ({ history }) => (
   <Router history={history}>
@@ -40,6 +41,7 @@ const App = ({ history }) => (
           <Route path='applications/:applicationId/table' component={Table}/>
           <Route path='applications/:applicationId/table/:tableId' component={ListTable}/>
           <Route path='applications/:applicationId/update/' component={UpdateApplication}/>
+          <Route path='docker' component={AdminDocker}/>
         </Route>
         <Route path='inscription' component={Inscription}/>
         <Route path='profil' component={Profil}/>

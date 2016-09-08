@@ -1,9 +1,10 @@
 import { call, put } from 'redux-saga/effects'
 import { takeEvery } from 'redux-saga'
-import { APPLICATIONS_ADD, APPLICATIONS_ADD_SUCCEESS, APPLICATIONS_ADD_FAILED, 
+import { APPLICATIONS_ADD, APPLICATIONS_ADD_SUCCEESS, APPLICATIONS_ADD_FAILED,
   APPLICATIONS_FETCH, APPLICATIONS_FETCH_SUCCESS, APPLICATIONS_FETCH_FAILED,
   APPLICATIONS_DELETE, APPLICATIONS_DELETE_SUCCESS, APPLICATIONS_DELETE_FAILED } from '../actions'
 import { applicationAddApi, applicationFetchApi, applicationDeleteApi } from '../api/application'
+import { getCookie } from '../utils/cookie'
 
 export function* applicationAdd ({ payload: { application } }) {
   try {
@@ -22,7 +23,7 @@ export function* applicationAdd ({ payload: { application } }) {
 export function* applicationFetch () {
   try {
     const userId = getCookie('dataface-user-id')
-    const { data } = yield call(applicationFetchApi, { application, userId })
+    const { data } = yield call(applicationFetchApi, userId)
     if (data.length) yield put({ type: APPLICATIONS_FETCH_SUCCESS, payload: { applications: data } })
   } catch (error) {
     console.log(error)

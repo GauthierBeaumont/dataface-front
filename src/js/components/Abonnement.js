@@ -5,7 +5,7 @@ import ModalPayment from '../containers/ModalPayment'
 class Abonnement extends Component{
     constructor(props){
         super(props)
-        this.state = { 
+        this.state = {
             displaymodal: false,
             abonnementchoise:""
         }
@@ -20,12 +20,14 @@ class Abonnement extends Component{
         return  (
             <section className="card-panel">
                 {
-                    abonnement 
+                    abonnement
                         ?  <div className="infouser">
-                                <div className="abonnement"> Vous disposer d un abonnement {abonnement.info_subscription.type_subscription.name}</div>
-                                <div className="dateend"> Jusqu au {abonnement.info_subscription.date_validation}</div>
+                                <h2>Abonnement</h2>
+                                <div className="abonnement"> Vous disposer d'un abonnement "{abonnement.info_subscription.type_subscription.name}"</div>
+                                <div className="dateend">Disponible jusqu'au {abonnement.info_subscription.date_validation}</div>
                             </div>
                         :   <div>
+                                <h2>Abonnement</h2>
                                 <div>Vous avez aucun abonnement.</div>
                                 <article className="pricing-table">{ abonementsList }</article>
                                     {

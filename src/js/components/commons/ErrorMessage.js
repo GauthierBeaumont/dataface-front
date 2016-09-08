@@ -4,7 +4,7 @@ export default class ErrorMessage extends React.Component {
   render() {
     return (
       <div className="alert alert-border-left col m12">
-        <strong>{ this.props.message }</strong>
+        <strong dangerouslySetInnerHTML={{ __html: this.props.message }}/>
       </div>
     )
   }

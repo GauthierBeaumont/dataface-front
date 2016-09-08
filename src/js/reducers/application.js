@@ -1,4 +1,4 @@
-import { APPLICATIONS_ADD, APPLICATIONS_ADD_SUCCEESS, APPLICATIONS_ADD_FAILED, 
+import { APPLICATIONS_ADD, APPLICATIONS_ADD_SUCCEESS, APPLICATIONS_ADD_FAILED,
   APPLICATIONS_FETCH, APPLICATIONS_FETCH_SUCCESS, APPLICATIONS_FETCH_FAILED,
   APPLICATIONS_DELETE, APPLICATIONS_DELETE_SUCCESS, APPLICATIONS_DELETE_FAILED } from '../actions'
 
@@ -19,9 +19,9 @@ const user = (state = { status: null, message: null, applications: [] }, { type,
         return { ...state, status: null, message: null, applications: newApplications }
       }
     case APPLICATIONS_ADD_FAILED:
-    case APPLICATIONS_FETCH_FAILED:
     case APPLICATIONS_DELETE_FAILED:
       return { ...state, status: 'error', message: payload.error }
+    case APPLICATIONS_FETCH_FAILED:
     case '@@router/LOCATION_CHANGE':
       return { ...state, message: null, status: null }
     default:

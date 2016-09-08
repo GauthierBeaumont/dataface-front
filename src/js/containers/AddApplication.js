@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { APPLICATIONS_ADD } from '../actions'
 import AddApplication from '../components/AddApplication'
 
+
 const mapDispatchToProps = dispatch => ({
   addApplication: application => dispatch({ type: APPLICATIONS_ADD, payload: { application } })
 })

@@ -1,13 +1,13 @@
 import { postURL, getURL, deleteURL } from './fetch'
 
-export const applicationAddApi = ({ application: { name, desciption }, userId }) => {
-	return postURL('Docker', { name, description, userId })
+export const applicationAddApi = ({ application: { name, description }, userId }) => {
+	return postURL('docker', { db_name: name, description, userId })
 }
 
-export const applicationFetchApi = applicationId => {
-	return getURL(`Docker/:applicationId`)
+export const applicationFetchApi = (userId) => {
+	return getURL(`docker/${userId}`)
 }
 
 export const applicationDeleteApi = applicationId => {
-	return deleteURL(`Docker/:applicationId`)
+	return deleteURL(`docker/:applicationId`)
 }

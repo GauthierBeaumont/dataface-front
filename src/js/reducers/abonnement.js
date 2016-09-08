@@ -17,9 +17,9 @@ const abonnement = (state = { status: null, message: null, abonnement: null, abo
     case ABONNEMENTS_FETCH_SUCCESS:
       return { ...state, abonnements: payload.abonnements }
     case ABONNEMENT_REGISTER_FAILED:
-    case ABONNEMENT_FETCH_FAILED:
       return { ...state, status: 'error', message: payload.error }
     case '@@router/LOCATION_CHANGE':
+    case ABONNEMENT_FETCH_FAILED:
       return { ...state, message: null, status: null }
     default:
       return state

@@ -47,7 +47,7 @@ const userNav = [
 ]
 
 const Dashboard = ({ logout, children, user: { role_id } }) => {
-  const isAdmin = role_id == 1
+  const isAdmin = role_id == 2
   const nav = isAdmin ? adminNav : userNav
   return (
     <div className="Dashboard">

@@ -4,9 +4,9 @@ import SuccessMessage from './commons/SuccessMessage'
 import { validateCardNumber } from '../utils/cardNumber'
 
 const defaultErrorState = {
-   card_no: null, 
-   cvc: null, 
-   expiration_month: null, 
+   card_no: null,
+   cvc: null,
+   expiration_month: null,
    expiration_year: null
 }
 
@@ -74,7 +74,9 @@ export default class ModalPayment extends Component {
                   </label>
                 </div>
               </div>
-              <button className="submit btn" onClick={(e) => this.submit(e, abonnementchoise)}>Payer</button>
+              <button className="submit btn" onClick={(e) => this.submit(e, abonnementchoise)} disabled={ status === 'loading' }>
+                { status === 'loading' ? 'Operation en cours ...' : 'Payer' }
+              </button>
             </form>
         </div>
     </div>
