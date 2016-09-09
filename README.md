@@ -16,3 +16,6 @@
 
   Open the following link in your browser:
   `http://localhost:3000`
+
+
+![](http://g.recordit.co/Jf2DzsKK2G.gif)
