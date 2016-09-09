@@ -11,7 +11,7 @@ const user = (state = { status: null, message: null, applications: [] }, { type,
     case APPLICATIONS_ADD_SUCCEESS:
       return { ...state, status: null, message: null, applications: [ ...state.applications, payload.application ] }
     case APPLICATIONS_FETCH_SUCCESS:
-      return { ...state, status: null, message: null, applications: payload.application }
+      return { ...state, status: null, message: null, applications: payload.applications }
     case APPLICATIONS_DELETE_SUCCESS:
       const index = state.applications.findIndex(application => application.id === applicationId)
       if (index !== -1) {

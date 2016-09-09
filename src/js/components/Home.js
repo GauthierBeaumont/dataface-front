@@ -45,7 +45,8 @@ class Home extends Component{
               </div>
             </form>
             <p className="Home_body_text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Et si la perfection était enfin à porté de main ? <br/>
+              DataFace, performant, élégant et adapté a vos besoins.
             </p>
           </div>
         </div>

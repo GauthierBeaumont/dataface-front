@@ -5,7 +5,7 @@ export const applicationAddApi = ({ application: { name, description }, userId }
 }
 
 export const applicationFetchApi = (userId) => {
-	return getURL(`docker/${userId}`)
+	return getURL(`docker?userId=${userId}`)
 }
 
 export const applicationDeleteApi = applicationId => {

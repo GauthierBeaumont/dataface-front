@@ -107,10 +107,13 @@ class Administration extends Component{
         overflow: 'auto',
         width: '100%',
         height: 300,
-        maxHeight: 300
+        maxHeight: 300,
+        backgroundColor: '#FFF',
+        border: '1px solid #E5E5E5',
+        padding: 20
     }
       return (
-         <div className="Users">
+         <div className="Users card-panel">
              <div className="container">
                <div className="content">
                   <div className="row">
@@ -134,7 +137,6 @@ class Administration extends Component{
 
                                   </tr>
                               </thead>
-
                               <tbody>
                                  {
                                     this.state.abonnements.map(function(abonnement, i){
@@ -152,7 +154,7 @@ class Administration extends Component{
                         </div>
                         <div className="form-group confidentialite">
                            <label>Confidentialité:</label>
-                      
+
 
                            <Wisiwig className="Wisiwig btn-group" style={editorStyle} content={this.state.confidentialite} onChange={this.handleContentChange} />
                         </div>

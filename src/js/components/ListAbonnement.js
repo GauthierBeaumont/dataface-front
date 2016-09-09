@@ -14,8 +14,8 @@ class ListAbonnement extends Component{
            <td>{abonnement.duration}</td>
            <td>{abonnement.order}</td>
            <td className="">
-              <a className="modal-action modal-close waves-effect waves-green btn-flat ">Update</a>
-              <a href="#!" className="modal-action modal-close waves-effect waves-red btn-flat ">Delete</a>
+              <a className="modal-action modal-close waves-effect waves-green btn-flat btn green" style={{ color: '#FFF', marginRight: 10 }}>Mettre à jour</a>
+              <a href="#!" className="modal-action modal-close waves-effect waves-red btn-flat btn red" style={{ color: '#FFF' }}>Supprmier</a>
 
            </td>
          </tr>
