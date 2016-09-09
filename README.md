@@ -3,7 +3,7 @@
 ##Installation :
 
   Clone the project
-  `git clone git@github.com:SteveCarrasco/dataface-front.git`
+  `git clone https://github.com/SteveCarrasco/dataface-front.git`
 
   Open the folder
   `cd dataface-front`
